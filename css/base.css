@@ -9,6 +9,7 @@ body{
    font-family: 'Poppins';
    color: #424242;
    line-height: 1.6;
+   font-size: 16px;
 }
 a{
    text-decoration: none;
@@ -51,7 +52,7 @@ img {
 }
 .home {
    background: transparent; 
-   padding: 18px 0;
+   padding: 40px 0;
    position: absolute;       
    top: 0;
    left: 0;
@@ -64,8 +65,7 @@ img {
 .logo{
    color: white;
    font-weight: bold;
-   font-size: 30px;
-   padding-left: 70px;
+   font-size: 24px;
 }
 .home-inner{
    display: flex;
@@ -76,16 +76,18 @@ img {
    display: flex;
    gap: 28px;
    text-align: center;
-   padding-left: 250px;
+   padding-left: 300px;
 }
 .nav a{
-   color: white;
+   color: #FFFFFF;
    font-weight: bold;
+   font-size: 16px;
 }
 .logout{
-   color: white;
+   color: #FFFFFF;
    font-weight: bold;
-   padding-left: 400px;
+   padding-left: 300px;
+   font-size: 16px;
 }
 body img{
    max-width: 100%;
@@ -94,10 +96,10 @@ body img{
 .hero{
    position: relative;
    z-index: 1;
-   color: white;
+   color: #FFFFFF;
    margin-top: -600px;
    margin-left: 50px;
-   padding: 160px 0 100px;
+   padding: 150px 0 100px;
 }
 .home-bg{
    position:relative;
@@ -106,45 +108,55 @@ body img{
    content: "";
    position: absolute;
    inset: 0;              
-   background: rgba(0, 0, 0, 0.45);
-   border-radius: 12px;
+   background: rgba(0, 0, 0, 0.6);
 }
 .hero h1{
-   font-size: 45px;
-   margin: 15px 0 20px;
+   width: 604px;
+   font-size: 64px;
+   line-height: 1.4;
+   margin: 0px 0 10px;
    font-weight: bold;
 }
 .small-text{
    font-weight: bold;
 }
 .hero-desc{
-   max-width:480px;
+   width:500px;
+   height: 66px;
    margin-bottom:30px;
+   letter-spacing: 0.2px;
 }
 .hero-buttons{
    display:flex;
    gap: 15px;
-   border-radius: 20px;
-   border-color:white;
-   border: 20px;
+
 }
 .hero-buttons .btn{
-   padding: 10px 20px 10px 20px;
-   border-radius: 15px;
+   padding: 12px 24px 12px 24px;
+   border-radius: 12px;
+   text-align-last: center;
+   padding-top:10px;
+   font-weight: bold;
+   font-size:14px;
 }
 .hero-buttons .btn-orange{
+   width: 119px;
+   height: 44px;
    background-color: #f4801e;
    color: white;
-   border: 2px solid #f4801e;
+   border: 1.5px solid #f4801e;
 }
 .hero-buttons .btn-outline{
+   width: 141px;
+   height: 44px;
    background-color: none;
    color: white;
-   border: 2px solid white;
+   border: 1.5px solid white;
 }
 .about{
    padding-top:70px;
-   height: 1142;
+   height: 1142px;
+   padding-left: 10px;   
 }
 .row{
    display:grid;
@@ -155,24 +167,28 @@ body img{
 }
 .col{
    flex: 1;
-
 }
 .col h2{
-   font-size: 30px;
+   font-size: 40px;
    margin-bottom: 16px;
    font-weight: bold;
 }
 .col p{
-   margin-bottom: 14px;
-   width: 500px;
+   margin-bottom: 20px;
+   width: 650px;
 }
 .col img{
    width: 492px;
    height: 328px;
-   margin-left:60px;
-   border: 1px solid #888;
    border-radius: 34px;
-   padding: 10px 20px 10px 20px;
+}
+.background-img{
+   width: 524px;
+   height: 360px;
+   margin-left: 60px;
+   border: 1.5px solid #E0E0E0;
+   border-radius: 50px;
+   padding: 16px;
    background-color: white;
 }
 .reverse{
@@ -180,14 +196,17 @@ body img{
 }
 .col .smoke-word{
    color:#888;
+   padding-bottom:10px;
 }
 .col a{
    color:#f4801e;
 }
 .col .btn-outline{
+   width: 126px;
+   height: 44px;
    border-radius:12px;
-   padding: 12px 20px 12px 20px;
-   border: 2px solid #f4801e;
+   padding: 12px 24px 12px 24px;
+   border: 1.5px solid #f4801e;
 }
 .stats{
    width:100%;
@@ -236,9 +255,10 @@ body img{
 }
 .room-card{
    background-color: white;
-  
    text-align: center;
-   padding: 20px;
+   margin-top: 20px;
+   width: 380px;
+   height:348px;
 }
 .room-card h3{
    margin-top: 20px;
@@ -251,7 +271,8 @@ body img{
    display:grid;
    grid-template-columns: repeat(3,1fr);
    gap: 24px;
-   padding: 0 120px;
+   padding: 20px 120px;
+   margin-left: 20px;
 }
 .service-card img{
    width: 36px;
@@ -281,6 +302,17 @@ body img{
 .services{
    padding-top: 100px;
    padding-bottom: 200px;
+}
+.service-card h3{
+   width: 286px;
+   font-size: 20px;
+}
+.service-card p{
+   width: 286px;
+   font-size: 12px;
+}
+.p1{
+   color:#9E9E9E;
 }
 .reviews{
    padding-bottom: 180px;
@@ -325,7 +357,7 @@ body img{
 }
 .footer-stay{
    width: 280px;
-   padding-bottom: 80px;
+   padding-bottom: 70px;
    text-align: left;
 }
 .footer-stay div{
@@ -333,7 +365,6 @@ body img{
 }
 .footer-stay p{
    color: #9E9E9E;
-   padding-bottom: 10px;
 }
 .footer-mini{
    display: flex;
