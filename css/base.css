@@ -1,37 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
+
+/* --- RESET & GLOBAL STYLES --- */
+* {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
-body{
-   font-family: 'Poppins';
+
+body {
+   font-family: 'Poppins', sans-serif;
    color: #424242;
    line-height: 1.6;
    font-size: 16px;
-
    letter-spacing: 0.2px;
+   background-color: #FFFFFF;
+   overflow-x: hidden;
 }
-a{
+
+a {
    text-decoration: none;
-   color: #FFFFFF;
+   color: inherit;
+   transition: all 0.3s ease;
 }
-.container{
-   max-width: 100%;
+
+/* CONTAINER CHUẨN FIGMA (Giới hạn chiều ngang để nội dung luôn căn giữa) */
+.container {
+   max-width: 1390px;
+   width: 100%;
    margin: 0 auto;
-   padding: 0 20px;
+   padding: 0 24px;
 }
-.orange{
-   color:#f4801e;
+
+.orange {
+   color: #f4801e;
 }
-.home-bg img {
- width: 1550px;
- height:850px;
- display: block;
- aspect-ratio: 4/3;
- object-fit: cover;
- background: #e5e5e5;
+
+.center {
+   text-align: center;
+   margin-bottom: 40px;
+   font-size: 40px;
+   font-weight: 700;
 }
+
+/* LABEL CHO CÁC SECTION */
 .section-label1 {
    text-align: center;     
    margin-bottom: 10px;     
@@ -47,7 +58,7 @@ a{
 .section-label2 {
    text-align: center;   
    margin-bottom: x;     
-   padding-bottom: 5px;    
+   padding-bottom: 15px;    
    color: #616161;          
    font-size: 16px; 
    display: flex;
@@ -56,380 +67,481 @@ a{
    font-weight: bold;
    gap: 10px;       
 }
-.section-label1 .line {
+
+.section-label1 .line, .section-label2 .line {
    width: 24px;        
-   height: 1.5px;
+   height: 2px;
    background: #616161;  
-   font-weight: bold;
 }
-.section-label2 .line {
-   width: 24px;        
-   height: 1.5px;
-   background: #616161; 
-   font-weight: bold; 
-}
-.center{
-   text-align: center;
-   margin-bottom: 40px;
-   font-weight: bold;
-}
-.home {
-   background: transparent; 
-   padding: 40px 0;
-   position: absolute;       
-   top: 0;
-   left: 0;
-   right: 0;
-   z-index: 10;
-}
-.home-screen{
-    position: relavtive;
-}
-.logo{
-   color: white;
-   font-weight: bold;
-   font-size: 24px;
-}
-.home-inner{
-   display: flex;
+
+/* BUTTONS */
+.btn {
+   display: inline-flex;
    align-items: center;
-   justify-content: space-around;
+   justify-content: center;
+   padding: 12px 28px;
+   border-radius: 12px;
+   font-size: 14px;
+   font-weight: 600;
+   height: 48px;
 }
-.nav{
-   display: flex;
-   gap: 32px;
-   text-align: center;
-   padding-left: 300px;
-}
-.nav a{
-   color: #EEEEEE;
-   font-weight: bold;
-   font-size: 16px;
-}
-.logout{
+
+.btn-orange {
+   background-color: #f4801e;
    color: #FFFFFF;
-   font-weight: bold;
-   padding-left: 300px;
-   font-size: 16px;
+   border: 1.5px solid #f4801e;
 }
-body img{
-   max-width: 100%;
-   height: 700px;
+
+.btn-orange:hover {
+   background-color: #d36b12;
+   border-color: #d36b12;
 }
-.hero{
+
+.btn-outline {
+   background-color: transparent;
+   color: #f4801e;
+   border: 1.5px solid #f4801e;
+}
+
+.btn-outline:hover {
+   background-color: #f4801e;
+   color: #FFFFFF;
+}
+
+
+/* --- 1. HERO & HEADER SCREEN --- */
+.home-screen {
    position: relative;
+   width: 100%;
+   min-height: 100vh; /* Chiều cao phủ kín màn hình */
+   display: flex;
+   flex-direction: column;
+   overflow:hidden;
+}
+
+/* Ảnh nền tuyệt đối bao phủ toàn màn hình */
+.home-bg {
+   position: absolute;
+   inset: 0;
    z-index: 1;
-   color: #FFFFFF;
-   margin-top: -600px;
-   margin-left: 50px;
-   padding: 120px 0 100px;
 }
-.home-bg{
-   position:relative;
+
+.home-bg img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }
-.home-bg::after{
+
+.home-bg::after {
    content: "";
    position: absolute;
    inset: 0;              
-   background: rgba(0, 0, 0, 0.6);
+   background: rgba(0, 0, 0, 0.5); /* Lớp phủ tối màu để nổi bật text */
+   z-index: 2;
 }
-.hero h1{
-   width: 604px;
-   font-size: 64px;
-   line-height: 1.4;
-   margin: 0px 0 10px;
-}
-.container h1{
-   margin-top:15px;
-}
-.hero-desc{
-   width:604px;
-   height: 66px;
-   margin-top: 20px;
-   margin-bottom:40px;
-   color: #EEEEEE;
 
+/* Header chuẩn Flexbox */
+.home {
+   position: relative;
+   z-index: 10;
+   padding: 30px 0;
+   width: 100%;
 }
-.hero-buttons{
-   display:flex;
-   gap: 15px;
-}
-.hero-buttons .btn{
-   padding: 12px 24px 12px 24px;
-   border-radius: 12px;
-   text-align-last: center;
-   padding-top:10px;
-   font-size:14px;
-}
-.hero-buttons .btn-orange{
-   width: 122px;
-   height: 44px;
-   background-color: #f4801e;
-   color: white;
-   border: 1.5px solid #f4801e;
-}
-.hero-buttons .btn-outline{
-   width: 143px;
-   height: 44px;
-   background-color: none;
-   color: white;
-   border: 1.5px solid white;
-}
-.about{
-   padding-top:70px;
-   height: 1142px;
-   padding-left: 10px;   
-}
-.row{
-   display:grid;
-   grid-template-columns: 1fr 1fr;
+
+.home-inner {
+   display: flex;
    align-items: center;
-   gap: 50px;
-   margin-bottom: 100px;
+   justify-content: space-between; /* Đẩy logo qua trái, logout qua phải */
 }
-.col{
-   flex: 1;
+
+.logo {
+   font-weight: 700;
+   font-size: 28px;
+   color: #FFFFFF;
 }
-.col h2{
-   font-size: 40px;
-   margin-bottom: 16px;
-   font-weight: bold;
+
+.nav {
+   display: flex;
+   gap: 32px;
 }
-.col p{
+
+.nav a {
+   color: #EEEEEE;
+   font-weight: 600;
+   font-size: 16px;
+}
+
+.nav a:hover {
+   color: #f4801e;
+}
+
+.logout {
+   color: #FFFFFF;
+   font-weight: 600;
+   font-size: 16px;
+}
+
+.logout:hover {
+   color: #f4801e;
+}
+
+/* Nội dung Hero tự nhiên không dùng margin âm */
+.hero {
+   position: relative;
+   z-index: 10;
+   color: #FFFFFF;
+   margin-top: auto;
+   margin-bottom: auto;
+   display:flex;
+   align-items: flex-start;
+   padding-top: 120px;
+   padding-bottom: 0;
+}
+
+.hero .small-text {
+   font-size: 18px;
+   font-weight: 500;
+   margin-bottom: 10px;
+}
+
+.hero h1 {
+   max-width: 650px;
+   font-size: 64px;
+   line-height: 1.2;
    margin-bottom: 20px;
-   width: 650px;
+}
+
+.hero-desc {
+   max-width: 600px;
+   font-size: 16px;
+   color: #EEEEEE;
+   margin-bottom: 35px;
+}
+
+.hero-buttons {
+   display: flex;
+   gap: 16px;
+}
+
+.hero-buttons .btn-outline {
+   color: #FFFFFF;
+   border: 1.5px solid #FFFFFF;
+}
+
+.hero-buttons .btn-outline:hover {
+   background-color: #FFFFFF;
+   color: #424242;
+}
+
+
+/* --- 2. ABOUT SECTION (Bố cục zíc-zắc) --- */
+.about {
+   min-height: 942px;    /* Chiều cao tối thiểu là 942px trên màn hình lớn */
+   padding: 80px 0;      /* Khoảng đệm an toàn trên dưới */
+   display: flex;
+   align-items: center;  /* Căn giữa toàn bộ nội dung bên trong theo chiều dọc */
+   width: 100%;
+}
+.about .container{
+   max-width: 1291px;
+}
+.row {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   margin-bottom: 80px;
+}
+
+/* Khi có class .reverse, tự động đảo chiều cột ảnh và chữ */
+.row.reverse {
+   flex-direction: row-reverse;
+}
+
+.c1, .c2{
+   max-width: 650px;
+   width: 100%;
    text-align: left;
+}
+.col h2 {
+   font-size: 36px;
+   margin-bottom: 20px;
+   font-weight: 700;
+}
+
+.col p {
+   margin-bottom: 20px;
+   color: #616161;
    font-weight: 500;
 }
-.col img{
-   width: 492px;
-   height: 328px;
-   border-radius: 34px;
+
+.col .smoke-word {
+   color: #888888;
 }
-   
-.background-img{
-   width: 524px;
+
+
+/* Khung viền bọc ngoài ảnh như Figma */
+.background-img {
+   width: 524px;    
    height: 360px;
-   margin-left: 60px;
    border: 1.5px solid #E0E0E0;
    border-radius: 50px;
    padding: 16px;
-   background-color: white;
-}
-.reverse{
-   margin-left:60px;
-}
-.col .smoke-word{
-   color:#888;
-   padding-bottom:10px;
-}
-.col a{
-   color:#f4801e;
-}
-.col .btn-outline{
-   width: 126px;
-   height: 44px;
-   border-radius:12px;
-   padding: 12px 24px 12px 24px;
-   border: 1.5px solid #f4801e;
-}
-.c1{
-   padding-right: 50px;
-}
-.stats{
-   width:100%;
-   height:119px;
-   background-color: #f4801e;
-}
-.stats-grid{
+   background-color: #FFFFFF;
    display: flex;
-   justify-content: space-around;
    align-items: center;
-   text-align: center;
-}
-.stats-grid div{
-   margin-top:15px;
-}
-.stats-grid h3 {
-   color: white;
-   font-size: 42px;
-}
-.stats-grid p {
-   color: white;
-   font-size: 14px;
-   margin-top:-10px;
-   margin-left:-5px;
-}
-.rooms{
-   background: #F8F9FB;
-   padding: 100px 0;
-}
-.room{
-    height: 538px;
-}
-.center{
-   font-size:45px;
-}
-.room-card img{
-   width: 380px;
-   height: 250px;
-}
-.rooms-grid{
-   display:flex;
-   justify-content: space-evenly;
-   align-items: center;
-}
-.room-card{
-   background-color: white;
-   text-align: center;
-   margin-top: 20px;
-   width: 380px;
-   height:348px;
-}
-.room-card h3{
-   margin-top: 20px;
-   color: #757575;
-   font-weight: 500;
-}
-.room-card p{
-   font-size: 14px;
-}
-.price{
-   color:#888;
-}
-.services-grid{
-   display:grid;
-   grid-template-columns: repeat(3,1fr);
-   gap: 24px;
-   padding: 20px 120px;
-   margin-left: 20px;
-}
-.service-card img{
-   width: 36px;
-   height: 36px;
-}
-.service-card{
-   width: 350px;
-   height: 258px;
-   border: 1px solid #e5e5e5;
-   display: flex;
-   flex-direction: column;
-   align-items:center;
    justify-content: center;
-   text-align: center;
-   padding: 70px;
 }
-.service-card h3{
-   margin-top: 5px;
+
+.background-img img {
+   width: 100%;
+   height: 100%;
+   border-radius: 28px;
+   object-fit: cover;
 }
-.service-card p{
-   margin-top:15px;
+
+
+/* --- 3. STATS BAR SECTION --- */
+.stats {
+   width: 100%;
+   background-color: #f4801e;
+   padding: 20px  70px 20px 70px;
 }
-.active{
-   background-color:#f4801e;
-   color: white;
-}
-.active img{
-   margin-bottom: 20px;
-}
-.service-card img{
-   margin-bottom: 20px;
-}
-.services{
-   padding-top: 100px;
-   padding-bottom: 200px;
-}
-.service-card h3{
-   width: 286px;
-   font-size: 20px;
-}
-.service-card p{
-   width: 286px;
-   font-size: 12px;
-}
-.p1{
-   color:#9E9E9E;
-}
-.reviews{
-   padding-bottom: 200px;
-}
- .reviews-grid {
-   width: 100%;             
-   max-width: 1200px;       
-   height: auto;            
-   margin: 0 auto;          
-   display: flex;
-   justify-content: center; 
-   align-items: center;
-   gap: 8px;               
-}
-.review-card {
-   text-align: center;
-   width: 298px;
-   height: 218px;
-   padding: 16px 24px 16px 24px;
-}
-.review-card img{
-   width: 30px;
-   height: 30px;
-   margin-bottom: 30px;
- 
-}
-.reviews .center{
-   margin-bottom: 90px;
-}
-.cap{
-   color: #757575;
-   width: 250px;
-   height: auto;
-   margin: 0 auto;
-   padding-bottom:20px;
-   letter-spacing: 0.2px;
-   font-weight: 500;
-   line-height: 140%;
-}
-.email{
-   color:  #9E9E9E;
-   font-size: 12px;
-}
-.footer{
-   max-width: 1346px;
-   padding-left: 80px;
-}
-.footer-grid{
+
+.stats-grid {
    display: flex;
    justify-content: space-between;
    align-items: center;
+}
+
+.stats-grid div {
    text-align: center;
 }
-.footer .logo{
-   color: #242424;
+
+.stats-grid h3 {
+   color: #FFFFFF;
+   font-size: 42px;
+   font-weight: 500;
+   margin-bottom: 4px;
 }
-.footer-stay{
-   max-width: 240px;
-   height: auto;
-   padding-bottom: 75px;
-   text-align: left;
+
+.stats-grid p {
+   color: #FFFFFF;
+   font-size: 14px;
+   opacity: 0.9;
+}
+
+
+/* --- 4. ROOMS SECTION --- */
+.rooms {
+   background: #F8F9FB;
+   padding: 100px 0;
+}
+.room .container{
+   max-width: 1236px;
+}
+.rooms-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 380px);
+   gap: 48px;
+   justify-content: center;
+   width: 100%;
+   margin-top: 100px;
+}
+
+.room-card {
+   background-color: #FFFFFF;
+   width: 380px;
+   height: 348px;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-bottom: 24px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+   transition: transform 0.3s ease;
+}
+
+.room-card img {
+   width: 100%;
+   height: 250px;
+   object-fit: cover;
+}
+
+.room-card h3 {
+   margin: 20px 24px 8px;
+   color: #424242;
+   font-weight: 400;
+}
+
+.room-card .price {
+   margin: 0 24px 24px;
+   color: #757575;
+   font-size: 14px;
+}
+
+
+/* --- 5. SERVICES SECTION --- */
+.services {
+   padding: 100px 0;
+}
+
+.services-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr); /* Lưới 3 cột */
+   gap: 24px;
+   margin-top: 40px;
+}
+
+.service-card {
+   background: #FFFFFF;
+   border: 1px solid #E5E5E5;
+   border-radius: 16px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   padding: 40px 30px;
+   transition: all 0.3s ease;
+}
+
+.service-card img {
+   width: 48px;
+   height: 48px;
+   margin-bottom: 20px;
+   object-fit: contain;
+}
+
+.service-card h3 {
+   font-size: 18px;
+   font-weight: 600;
+   margin-bottom: 12px;
+   color: #424242;
+}
+
+.service-card p {
+   font-size: 13px;
+   color: #9E9E9E;
+   line-height: 1.5;
+}
+
+/* Card màu cam chủ đạo (Active) */
+.service-card.active {
+   background-color: #f4801e;
+   border-color: #f4801e;
+   color: #FFFFFF;
+}
+
+.service-card.active h3 {
+   color: #FFFFFF;
+}
+
+.service-card.active p {
+   color: #FFFFFF;
+   opacity: 0.9;
+}
+
+/* Đổi màu icon của card active sang trắng */
+.service-card.active img {
+   filter: brightness(0) invert(1);
+}
+
+
+/* --- 6. TESTIMONIALS (REVIEWS) --- */
+.reviews {
+   padding: 100px 0;
+   background-color: #FFFFFF;
+}
+
+.reviews-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); /* 4 cột đánh giá song song */
+   gap: 24px;
+   margin-top: 40px;
+}
+
+.review-card {
+   background: #FFFFFF;
+   border: 1px solid #E5E5E5;
+   border-radius: 16px;
+   padding: 30px 20px;
+   text-align: center;
+   box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+}
+
+.review-card img {
+   width: 32px;
+   height: 32px;
+   margin-bottom: 20px;
+   object-fit: contain;
+}
+
+.review-card .cap {
+   font-size: 14px;
+   color: #616161;
+   margin-bottom: 20px;
+   line-height: 1.5;
+}
+
+.review-card h4 {
+   font-size: 16px;
+   font-weight: 600;
+   color: #212121;
+   margin-bottom: 4px;
+}
+
+.review-card .email {
+   font-size: 12px;
+   color: #9E9E9E;
+}
+
+
+/* --- 7. FOOTER SECTION --- */
+.footer {
+   background: #FFFFFF;
+   padding: 80px 0 60px;
+   border-top: 1px solid #EEEEEE;
+}
+
+.footer-grid {
+   display: grid;
+   grid-template-columns: 2fr 1fr 1fr 1fr 1fr; /* 5 cột: Cột đầu rộng gấp đôi các cột link */
+   gap: 40px;
+}
+
+.footer-stay {
    display: flex;
    flex-direction: column;
    gap: 16px;
 }
-.footer-stay div{
-   padding-bottom: 10px;
+
+.footer .logo {
+   color: #212121;
 }
-.footer-stay p{
-   color: #9E9E9E;
+
+.footer-stay p {
+   color: #757575;
+   font-size: 14px;
 }
-.footer-mini{
-   width: 150px;
+
+.footer-mini {
    display: flex;
    flex-direction: column;
-   text-align: left;
-   gap: 24px;
+   gap: 16px;
 }
-.footer-mini a{
-   color: #9E9E9E;
+
+.footer-mini h4 {
+   font-size: 16px;
+   font-weight: 600;
+   color: #212121;
 }
-.footer{
-   padding-bottom: 100px;
+
+.footer-mini a {
+   color: #757575;
+   font-size: 14px;
+}
+
+.footer-mini a:hover {
+   color: #f4801e;
 }
