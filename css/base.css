@@ -234,10 +234,10 @@ a {
 }
 
 
-/* --- 2. ABOUT SECTION (Bố cục zíc-zắc) --- */
+/* --- 2. ABOUT SECTION--- */
 .about {
-   min-height: 942px;    /* Chiều cao tối thiểu là 942px trên màn hình lớn */
-   padding: 80px 0;      /* Khoảng đệm an toàn trên dưới */
+   min-height: 942px;    
+   padding: 80px 0;     
    display: flex;
    align-items: center;  /* Căn giữa toàn bộ nội dung bên trong theo chiều dọc */
    width: 100%;
@@ -279,8 +279,6 @@ a {
    color: #888888;
 }
 
-
-/* Khung viền bọc ngoài ảnh như Figma */
 .background-img {
    width: 524px;    
    height: 360px;
@@ -388,27 +386,29 @@ a {
 
 .services-grid {
    display: grid;
-   grid-template-columns: repeat(3, 1fr); /* Lưới 3 cột */
+   grid-template-columns: repeat(3, 350px); 
    gap: 24px;
-   margin-top: 40px;
+   margin-top: 60px;
+   justify-content: center;
 }
 
 .service-card {
    background: #FFFFFF;
    border: 1px solid #E5E5E5;
-   border-radius: 16px;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
    text-align: center;
-   padding: 40px 30px;
+   padding: 30px 24px;
    transition: all 0.3s ease;
+   width: 350px;
+   height: 258px;
 }
 
 .service-card img {
-   width: 48px;
-   height: 48px;
+   width: 36px;
+   height: 36px;
    margin-bottom: 20px;
    object-fit: contain;
 }
@@ -426,7 +426,6 @@ a {
    line-height: 1.5;
 }
 
-/* Card màu cam chủ đạo (Active) */
 .service-card.active {
    background-color: #f4801e;
    border-color: #f4801e;
@@ -441,13 +440,6 @@ a {
    color: #FFFFFF;
    opacity: 0.9;
 }
-
-/* Đổi màu icon của card active sang trắng */
-.service-card.active img {
-   filter: brightness(0) invert(1);
-}
-
-
 /* --- 6. TESTIMONIALS (REVIEWS) --- */
 .reviews {
    padding: 100px 0;
@@ -456,37 +448,34 @@ a {
 
 .reviews-grid {
    display: grid;
-   grid-template-columns: repeat(4, 1fr); /* 4 cột đánh giá song song */
+   grid-template-columns: repeat(4, 298px); /* 4 cột đánh giá song song */
    gap: 24px;
-   margin-top: 40px;
+   margin-top: 90px;
+   justify-content: center;
 }
 
 .review-card {
-   background: #FFFFFF;
-   border: 1px solid #E5E5E5;
-   border-radius: 16px;
-   padding: 30px 20px;
    text-align: center;
-   box-shadow: 0 10px 25px rgba(0,0,0,0.02);
 }
-
 .review-card img {
-   width: 32px;
-   height: 32px;
+   width: 30px;
+   height: 30px;
    margin-bottom: 20px;
    object-fit: contain;
 }
 
 .review-card .cap {
-   font-size: 14px;
-   color: #616161;
+   color: #757575;
    margin-bottom: 20px;
    line-height: 1.5;
+   max-width: 250px;
+   width: 100%;
+   margin: 0 auto 20px auto;
 }
 
 .review-card h4 {
    font-size: 16px;
-   font-weight: 600;
+   font-weight:500;
    color: #212121;
    margin-bottom: 4px;
 }
@@ -499,29 +488,29 @@ a {
 
 /* --- 7. FOOTER SECTION --- */
 .footer {
-   background: #FFFFFF;
-   padding: 80px 0 60px;
-   border-top: 1px solid #EEEEEE;
+   padding: 100px 0 100px;
 }
 
 .footer-grid {
    display: grid;
-   grid-template-columns: 2fr 1fr 1fr 1fr 1fr; /* 5 cột: Cột đầu rộng gấp đôi các cột link */
-   gap: 40px;
+   grid-template-columns: 280px 150px 150px 150px 150px; /* 5 cột: Cột đầu rộng gấp đôi các cột link */
+   gap: 100px;
+   justify-content: center;
 }
 
 .footer-stay {
    display: flex;
    flex-direction: column;
    gap: 16px;
+   margin-top: -6px;
 }
 
 .footer .logo {
-   color: #212121;
+   color: #424242;
 }
 
 .footer-stay p {
-   color: #757575;
+   color: #9E9E9E;
    font-size: 14px;
 }
 
@@ -534,11 +523,11 @@ a {
 .footer-mini h4 {
    font-size: 16px;
    font-weight: 600;
-   color: #212121;
+   color: #424242;
 }
 
 .footer-mini a {
-   color: #757575;
+   color: #9E9E9E;
    font-size: 14px;
 }
 
