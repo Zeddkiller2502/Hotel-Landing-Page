@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* --- RESET & GLOBAL STYLES --- */
 * {
    margin: 0;
    padding: 0;
@@ -23,7 +22,6 @@ a {
    transition: all 0.3s ease;
 }
 
-/* CONTAINER CHUẨN FIGMA (Giới hạn chiều ngang để nội dung luôn căn giữa) */
 .container {
    max-width: 1390px;
    width: 100%;
@@ -42,7 +40,6 @@ a {
    font-weight: 700;
 }
 
-/* LABEL CHO CÁC SECTION */
 .section-label1 {
    text-align: center;     
    margin-bottom: 10px;     
@@ -55,6 +52,7 @@ a {
    font-weight: bold;
    gap: 10px;
 }
+
 .section-label2 {
    text-align: center;       
    padding-bottom: 15px;    
@@ -73,7 +71,6 @@ a {
    background: #616161;  
 }
 
-/* BUTTONS */
 .btn {
    display: inline-flex;
    align-items: center;
@@ -139,7 +136,6 @@ a {
    z-index: 2;
 }
 
-/* Header chuẩn Flexbox */
 .home {
    position: relative;
    z-index: 10;
@@ -244,6 +240,12 @@ a {
 .about .container{
    max-width: 1291px;
 }
+.about-content{
+   display: flex;
+   flex-direction: column;
+   gap: 100px;
+   width: 100%;
+}
 .row {
    display: flex;
    align-items: center;
@@ -252,7 +254,6 @@ a {
    margin-bottom: 80px;
 }
 
-/* Khi có class .reverse, tự động đảo chiều cột ảnh và chữ */
 .row.reverse {
    flex-direction: row-reverse;
 }
@@ -343,7 +344,15 @@ a {
    gap: 48px;                
    flex-wrap: wrap;        
    width: 100%;
-   margin-top: 100px;
+}
+
+.rooms-header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 12px;              
+   margin-bottom: 60px;    
+   text-align: center;
 }
 
 .room-card {
@@ -357,6 +366,14 @@ a {
    padding-bottom: 24px;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
    transition: transform 0.3s ease;
+}
+
+.rooms-header .section-label2 {
+   padding-bottom: 0;      
+}
+
+.rooms-header .center {
+   margin-bottom: 0;      
 }
 
 .room-card img {
@@ -394,6 +411,22 @@ a {
    margin-right: auto;
 }
 
+.services-header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 12px;             
+   margin-bottom: 60px;  
+   text-align: center;
+}
+
+.services-header .section-label2 {
+   padding-bottom: 0;   
+}
+
+.services-header .center {
+   margin-bottom: 0;     
+}
 
 .service-card {
    background: #FFFFFF;
@@ -454,7 +487,24 @@ a {
    justify-content: center;   /* Căn giữa */
    gap: 24px;
    flex-wrap: wrap;           /* Tự xuống dòng trên mobile */
-   margin-top: 90px;
+   margin-top: 0;
+}
+
+.reviews-header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 12px;             
+   margin-bottom: 90px;    
+   text-align: center;
+}
+
+.reviews-header .section-label2 {
+   padding-bottom: 0;     
+}
+
+.reviews-header .center {
+   margin-bottom: 0;      
 }
 
 .review-card {
