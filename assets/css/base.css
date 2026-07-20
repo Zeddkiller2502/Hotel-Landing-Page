@@ -28,7 +28,7 @@ a {
    max-width: 1920px; 
    width: 100%;
    margin: 0 auto;
-   padding: 30px 80px 50px 80px;
+   
 }
 
 .orange {
@@ -44,9 +44,8 @@ a {
 
 /* LABEL CHO CÁC SECTION */
 .section-label1 {
-   text-align: center;     
-   margin-bottom: 10px;     
-   padding-bottom: 80px;   
+   text-align: center;        
+   padding-bottom: 100px;   
    color: #616161;         
    font-size: 16px;         
    display: flex;
@@ -114,6 +113,7 @@ a {
    position: relative;
    width: 100%;
    overflow:hidden;
+   
 }
 
 .home-wrapper{
@@ -123,6 +123,7 @@ a {
    min-height: 100vh; /* Chiều cao phủ kín màn hình */
    display: flex;
    flex-direction: column;
+   padding: 50px 80px 80px 80px;
 }
 
 /* Ảnh nền tuyệt đối bao phủ toàn màn hình */
@@ -144,6 +145,7 @@ a {
    inset: 0;              
    background: rgba(0, 0, 0, 0.5); /* Lớp phủ tối màu để nổi bật text */
    z-index: 2;
+   padding: 50px 80px 80px 80px;
 }
 
 /* Header chuẩn Flexbox */
@@ -240,7 +242,7 @@ a {
 
 /* --- 2. ABOUT SECTION--- */
 .about {    
-   padding: 100px 128px 100px 128px;     
+   padding: 100px 129px;     
    display: flex;
    align-items: center;  /* Căn giữa toàn bộ nội dung bên trong theo chiều dọc */
    width: 100%;
@@ -251,7 +253,6 @@ a {
    align-items: center;
    justify-content: center;
    width: 100%;
-   margin-bottom: 80px;
    gap: 117px;
 }
 
@@ -338,7 +339,7 @@ a {
 /* --- 4. ROOMS SECTION --- */
 .rooms {
    background: #F8F9FB;
-   padding: 100px 0;
+   padding: 100px 156px;
 }
 .rooms-grid {
    display: flex;             
@@ -383,7 +384,7 @@ a {
 
 /* --- 5. SERVICES SECTION --- */
 .services {
-   padding: 100px 0;
+   padding: 100px 157px;
 }
 
 .services-grid {
@@ -391,7 +392,7 @@ a {
    justify-content: center;   
    gap: 24px;                 
    flex-wrap: wrap;          
-   margin-top: 60px;
+   margin-top: 100px;
    
    max-width: 1100px;         
    margin-left: auto;
@@ -448,7 +449,7 @@ a {
 }
 /* --- 6. TESTIMONIALS (REVIEWS) --- */
 .reviews {
-   padding: 100px 0;
+   padding: 100px 157px;
    background-color: #FFFFFF;
 }
 
@@ -498,7 +499,7 @@ a {
 
 /* --- 7. FOOTER SECTION --- */
 .footer {
-   padding: 100px 80px 100px 80px;
+   padding: 100px 80px;
 }
 
 .footer-grid {
