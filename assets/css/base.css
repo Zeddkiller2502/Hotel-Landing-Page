@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* --- RESET & GLOBAL STYLES --- */
 * {
    margin: 0;
    padding: 0;
@@ -23,7 +22,6 @@ a {
    transition: all 0.3s ease;
 }
 
-/* CONTAINER CHUẨN FIGMA (Giới hạn chiều ngang để nội dung luôn căn giữa) */
 .container {
    max-width: 1920px; 
    width: 100%;
@@ -42,7 +40,6 @@ a {
    font-weight: 700;
 }
 
-/* LABEL CHO CÁC SECTION */
 .section-label1 {
    text-align: center;        
    padding-bottom: 100px;   
@@ -73,7 +70,6 @@ a {
    background: #616161;  
 }
 
-/* BUTTONS */
 .btn {
    display: inline-flex;
    align-items: center;
@@ -148,7 +144,6 @@ a {
    padding: 50px 80px 80px 80px;
 }
 
-/* Header chuẩn Flexbox */
 .home {
    position: relative;
    z-index: 10;
