@@ -9,7 +9,7 @@
 body {
    font-family: 'Poppins', sans-serif;
    color: #424242;
-   line-height: 1.6;
+   line-height: 1.6;    
    font-size: 16px;
    letter-spacing: 0.2px;
    background-color: #FFFFFF;
@@ -23,10 +23,9 @@ a {
 }
 
 .container {
-   max-width: 1920px; 
+   max-width: 1236px; 
    width: 100%;
    margin: 0 auto;
-   
 }
 
 .orange {
@@ -74,11 +73,12 @@ a {
    display: inline-flex;
    align-items: center;
    justify-content: center;
-   padding: 12px 28px;
+   padding: 12px 24px;
    border-radius: 12px;
    font-size: 14px;
    font-weight: 600;
-   height: 48px;
+   height: 44px;
+   white-space: nowrap;
 }
 
 .btn-orange {
@@ -144,13 +144,6 @@ a {
    padding: 50px 80px 80px 80px;
 }
 
-.home {
-   position: relative;
-   z-index: 10;
-   padding: 30px 0;
-   width: 100%;
-}
-
 .home-inner {
    display: flex;
    align-items: center;
@@ -199,32 +192,54 @@ a {
    justify-content: space-between;
 }
 
-.hero .small-text {
+.hero-content{
+   max-width: 604px;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 32px;
+}
+.hero-content .small-text {
    font-size: 18px;
-   font-weight: 500;
-   margin-bottom: 10px;
+   font-weight: 600;  
+   line-height: 140%;
+   letter-spacing: 0.2px;
 }
 
-.hero h1 {
-   max-width: 650px;
+.hero-content h1 {
+   max-width: 604px;
+   height: 192px;
    font-size: 64px;
-   line-height: 1.2;
-   margin-bottom: 20px;
+   line-height: 150%;
+   font-weight: 700;
 }
 
 .hero-desc {
    max-width: 600px;
+   height: 66px;
    font-size: 16px;
+   line-height: 140%;
    color: #EEEEEE;
-   margin-bottom: 35px;
 }
 
 .hero-buttons {
    display: flex;
-   gap: 16px;
+   align-items: center;
+   width: 272px;
+   gap: 12px;
 }
 
+.hero-buttons .btn-orange{
+   max-width: 119px;
+}
+.hero-buttons a{ 
+   font-size: 14px;
+   letter-spacing: 0.2px;
+   line-height: 140%;
+}
 .hero-buttons .btn-outline {
+   max-width: 141px;
    color: #FFFFFF;
    border: 1.5px solid #FFFFFF;
 }
@@ -237,12 +252,19 @@ a {
 
 /* --- 2. ABOUT SECTION--- */
 .about {    
-   padding: 100px 129px;     
+   padding: 100px;    
+   width: 100%; 
    display: flex;
    align-items: center;  /* Căn giữa toàn bộ nội dung bên trong theo chiều dọc */
-   width: 100%;
    justify-content: center;
 }
+
+.about-content{
+   display: flex;
+   flex-direction: column;
+   gap: 100px;
+}
+
 .row {
    display: flex;
    align-items: center;
@@ -379,7 +401,7 @@ a {
 
 /* --- 5. SERVICES SECTION --- */
 .services {
-   padding: 100px 157px;
+   padding: 100px;
 }
 
 .services-grid {
@@ -444,7 +466,7 @@ a {
 }
 /* --- 6. TESTIMONIALS (REVIEWS) --- */
 .reviews {
-   padding: 100px 157px;
+   padding: 100px;
    background-color: #FFFFFF;
 }
 
@@ -454,10 +476,6 @@ a {
    gap: 50px;
    flex-wrap: wrap;         
    margin-top: 90px;
-}
-
-.reviews .container{
-   max-width: 1400px;
 }
 
 .review-card {
