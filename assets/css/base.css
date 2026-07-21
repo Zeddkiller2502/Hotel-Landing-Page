@@ -356,100 +356,106 @@ a {
 /* --- 4. ROOMS SECTION --- */
 .rooms {
    background: #F8F9FB;
-   padding: 100px 156px;
+   padding: 100px 0px;
 }
 .rooms-grid {
-   display: flex;             
-   justify-content: center;  
-   gap: 48px;              
-   flex-wrap: wrap;         
+   display: flex;              
+   gap: 48px;                     
    width: 100%;
    margin-top: 100px;
 }
 
 .room-card {
    background-color: #FFFFFF;
-   width: 380px;
-   height: 348px;
+   max-width: 380px;
    overflow: hidden;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding-bottom: 24px;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
    transition: transform 0.3s ease;
+   text-align: center;
 }
 
-.room-card img {
+.room-card-background{
+   display: flex;
+   gap: 8px;
+   flex-direction: column;
+   height: 98px;
+   padding: 24px 16px;
+}
+.room-card-img {
    width: 100%;
    height: 250px;
    object-fit: cover;
 }
 
-.room-card h3 {
-   margin: 20px 24px 8px;
+.room-card-word {
    color: #424242;
-   font-weight: 400;
+   font-weight: 500;
+   letter-spacing: 0.2px;
+   text-transform: uppercase;
+   line-height: 140%;
 }
 
-.room-card .price {
-   margin: 0 24px 24px;
+.room-card-price {
    color: #757575;
    font-size: 14px;
+   font-weight: 400;
+   letter-spacing: 0.2px;
+   line-height: 140%;
 }
 
 
 /* --- 5. SERVICES SECTION --- */
 .services {
-   padding: 100px;
+   padding: 100px 0px;
+   width: 100%;
 }
 
 .services-grid {
    display: flex;            
-   justify-content: center;   
-   gap: 24px;                 
+   justify-content: space-between;   
+   gap: 48px;                 
    flex-wrap: wrap;          
    margin-top: 100px;
-   
-   max-width: 1100px;         
-   margin-left: auto;
-   margin-right: auto;
 }
 
 .service-card {
    background: #FFFFFF;
    border: 1px solid #E5E5E5;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
    text-align: center;
-   padding: 30px 24px;
+   padding: 64px 32px;
    transition: all 0.3s ease;
    width: 350px;
    height: 258px;
+   display: flex;
+   gap: 10px
 }
 
-.service-card img {
+.service-img {
    width: 36px;
    height: 36px;
-   margin-bottom: 20px;
-   object-fit: contain;
 }
 
-.service-card h3 {
+.service-card-namemark {
    font-size: 18px;
    font-weight: 600;
    margin-bottom: 12px;
    color: #424242;
 }
 
-.service-card p {
-   font-size: 13px;
+.service-card-word {
+   font-size: 12px;
    color: #9E9E9E;
    line-height: 1.5;
 }
 
+.services-background{
+   width: 286px;
+   height: 132px;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 32px;
+}
 .service-card.active {
    background-color: #f4801e;
    border-color: #f4801e;
