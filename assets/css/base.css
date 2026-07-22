@@ -334,19 +334,16 @@ a {
    display: flex;
    justify-content: space-between;
    align-items: center;
-}
-
-.stats-grid div {
    text-align: center;
 }
 
-.stats-grid h3 {
+.stats-number {
    color: #FFFFFF;
    font-size: 42px;
    font-weight: 500;
 }
 
-.stats-grid p {
+.stats-word {
    color: #FFFFFF;
    font-size: 14px;
    opacity: 0.9;
@@ -370,8 +367,13 @@ a {
    max-width: 380px;
    overflow: hidden;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-   transition: transform 0.3s ease;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
    text-align: center;
+}
+
+.room-card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 .room-card-background{
@@ -456,61 +458,118 @@ a {
    align-items: center;
    gap: 32px;
 }
+
+/* 2. Active state */
 .service-card.active {
    background-color: #f4801e;
    border-color: #f4801e;
    color: #FFFFFF;
 }
 
-.service-card.active h3 {
+.service-card.active h3,
+.service-card.active p {
    color: #FFFFFF;
 }
 
-.service-card.active p {
+.service-card.active .service-img img {
+   filter: brightness(0) invert(1);
+}
+
+/* 3. Hover — card thường */
+.service-card:not(.active):hover {
+   background-color: #f4801e;
+   border-color: #f4801e;
+}
+
+.service-card:not(.active):hover h3,
+.service-card:not(.active):hover p {
    color: #FFFFFF;
-   opacity: 0.9;
+}
+
+.service-card:not(.active):hover .service-img img {
+   filter: brightness(0) invert(1);
+}
+
+/* 4. Hover — card active (đảo màu) */
+.service-card.active:hover {
+   background-color: #FFFFFF;
+   border-color: #f4801e;
+}
+
+.service-card.active:hover h3,
+.service-card.active:hover p {
+   color: #f4801e;
+}
+
+.service-card.active:hover .service-img img {
+   filter: brightness(0) saturate(100%) invert(48%) sepia(89%) saturate(1490%) hue-rotate(1deg) brightness(103%) contrast(101%);
 }
 /* --- 6. TESTIMONIALS (REVIEWS) --- */
 .reviews {
-   padding: 100px;
+   padding: 100px 0px;
    background-color: #FFFFFF;
 }
 
 .reviews-grid {
    display: flex;      
-   justify-content: center; 
-   gap: 50px;
-   flex-wrap: wrap;         
-   margin-top: 90px;
+   justify-content: space-between; 
+   gap: 32px;
 }
 
 .review-card {
    text-align: center;
+   padding: 16px 24px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 24px;
 }
-.review-card img {
+
+.review-icon {
    width: 30px;
    height: 30px;
-   margin-bottom: 20px;
-   object-fit: contain;
+   
+}
+.review-card-top{
+   max-width: 250px;
+   height: 114px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 18px;
 }
 
-.review-card .cap {
+.review-card-bottom{
+   max-width: 193px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+.review-icon img {
+   width: 100%;
+   height: 100%;
+}
+.review-cap {
    color: #757575;
-   margin-bottom: 20px;
-   line-height: 1.5;
+   font-weight: 500;
+   line-height: 140%;
+   letter-spacing: 0.2px;
    max-width: 250px;
    width: 100%;
-   margin: 0 auto 20px auto;
+   margin: 0 auto 0 auto;
 }
 
-.review-card h4 {
+.review-namemark {
    font-size: 16px;
-   font-weight:500;
-   color: #212121;
+   font-weight:600;
+   color: #424242;
    margin-bottom: 4px;
+   line-height: 140%;
+   letter-spacing: 0.2px;
 }
 
-.review-card .email {
+.review-email {
    font-size: 12px;
    color: #9E9E9E;
 }
@@ -557,6 +616,13 @@ a {
    color: #424242;
 }
 
+.footer-mini ul{
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   list-style: none;
+   padding: 0;
+}
 .footer-mini a {
    color: #9E9E9E;
    font-size: 14px;
@@ -564,4 +630,193 @@ a {
 
 .footer-mini a:hover {
    color: #f4801e;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN CHO MOBILE (<= 768px)
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+   /* --- 1. GENERAL & CONTAINER --- */
+   .container {
+      padding: 0 20px;
+   }
+
+   .center {
+      font-size: 30px;
+      margin-bottom: 24px;
+   }
+
+   /* --- 2. HEADER & HERO SCREEN --- */
+   .home-wrapper {
+      padding: 30px 20px;
+   }
+
+   /* Ẩn menu chữ thông thường trên mobile (có thể thay bằng hamburger menu nếu cần) */
+   .nav {
+      display: none; 
+   }
+
+   .home-inner {
+      justify-content: space-between;
+   }
+
+   .hero {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      padding-top: 20px;
+   }
+
+   .hero-content h1 {
+      font-size: 38px;
+      height: auto;
+      line-height: 1.3;
+   }
+
+   .hero-content {
+      gap: 20px;
+   }
+
+   .hero-desc {
+      font-size: 14px;
+      height: auto;
+   }
+
+   .hero-buttons {
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   .hero-buttons .btn {
+      width: 100%;
+      max-width: 100% !important;
+   }
+
+   /* --- 3. ABOUT SECTION --- */
+   .about {
+      padding: 60px 0;
+   }
+
+   .about-content {
+      gap: 50px;
+   }
+
+   .row, .row.reverse {
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   .background-img {
+      width: 100%;
+      height: 260px;
+      border-radius: 30px;
+   }
+
+   .col h2 {
+      font-size: 28px;
+   }
+
+   /* --- 4. STATS BAR SECTION --- */
+   .stats {
+      height: auto;
+      padding: 30px 20px;
+   }
+
+   .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      width: 100%;
+   }
+
+   .stats-number {
+      font-size: 32px;
+   }
+
+   /* --- 5. ROOMS SECTION --- */
+   .rooms {
+      padding: 60px 0;
+   }
+
+   .rooms-grid {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      gap: 30px;
+   }
+
+   .room-card {
+      max-width: 100%;
+      width: 100%;
+   }
+
+   /* --- 6. SERVICES SECTION --- */
+   .services {
+      padding: 60px 0;
+   }
+
+   .services-grid {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      gap: 20px;
+   }
+
+   .service-card {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      padding: 40px 20px;
+   }
+
+   .services-background {
+      width: 100%;
+      height: auto;
+   }
+
+   /* --- 7. REVIEWS SECTION --- */
+   .reviews {
+      padding: 60px 0;
+   }
+
+   .reviews-grid {
+      flex-direction: column;
+      gap: 40px;
+   }
+
+   .review-card {
+      width: 100%;
+   }
+
+   /* --- 8. FOOTER SECTION --- */
+   .footer {
+      padding: 60px 20px;
+   }
+
+   .footer-grid {
+      flex-direction: column;
+      gap: 40px;
+      align-items: flex-start;
+   }
+
+   .footer-stay {
+      margin-top: 0;
+      width: 100%;
+   }
+
+   .footer-mini {
+      width: 100%;
+   }
+}
+
+/* --- TỐI ƯU THÊM CHO MÀN HÌNH RẤT NHỎ (<= 480px) --- */
+@media screen and (max-width: 480px) {
+   .hero-content h1 {
+      font-size: 32px;
+   }
+   
+   .center {
+      font-size: 26px;
+   }
 }
