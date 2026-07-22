@@ -1,5 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: 'Poppins'; 
 
+    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+    
+    font-weight: bold;
+    font-style:normal;
+}
 * {
    margin: 0;
    padding: 0;
@@ -7,7 +13,7 @@
 }
 
 body {
-   font-family: 'Poppins', sans-serif;
+   font-family: 'Poppins';
    color: #424242;
    line-height: 1.6;    
    font-size: 16px;
@@ -633,12 +639,168 @@ a {
 }
 
 /* ==========================================
-   RESPONSIVE DESIGN CHO MOBILE (<= 768px)
+   CSS CHO HAMBURGER MENU & RESPONSIVE BREAKPOINTS
    ========================================== */
 
-@media screen and (max-width: 768px) {
-   /* --- 1. GENERAL & CONTAINER --- */
+/* Mặc định trên Desktop: Ẩn nút hamburger, hiện menu ngang */
+.menu-toggle {
+   display: none;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 30px;
+   height: 21px;
+   cursor: pointer;
+   z-index: 100;
+}
+
+.menu-toggle span {
+   display: block;
+   width: 100%;
+   height: 3px;
+   background-color: #FFFFFF;
+   border-radius: 3px;
+   transition: all 0.3s ease;
+}
+
+.logout-mobile {
+   display: none; /* Chỉ hiện trong menu mobile */
+}
+
+/* ==========================================
+   CSS CHO HAMBURGER MENU & RESPONSIVE BREAKPOINTS
+   ========================================== */
+
+/* Mặc định trên Desktop: Ẩn nút hamburger, hiện menu ngang */
+.menu-toggle {
+   display: none;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 30px;
+   height: 21px;
+   cursor: pointer;
+   z-index: 100;
+}
+
+.menu-toggle span {
+   display: block;
+   width: 100%;
+   height: 3px;
+   background-color: #FFFFFF;
+   border-radius: 3px;
+   transition: all 0.3s ease;
+}
+
+.logout-mobile {
+   display: none; /* Chỉ hiện trong menu mobile */
+}
+
+
+/* ==========================================
+   1. `xxl` applies to x-large devices (less than 1400px)
+   ========================================== */
+@media (max-width: 1399.98px) {
    .container {
+      max-width: 1140px;
+   }
+}
+
+
+/* ==========================================
+   2. `xl` applies to large devices (less than 1200px)
+   ========================================== */
+@media (max-width: 1199.98px) {
+   .container {
+      max-width: 960px;
+   }
+}
+
+
+/* ==========================================
+   3. `lg` applies to medium devices (less than 992px)
+   ========================================== */
+@media (max-width: 991.98px) {
+   .container {
+      max-width: 720px;
+      padding: 0 20px;
+   }
+
+   /* Kích hoạt Hamburger Menu cho từ tablet (< 992px) xuống */
+   .menu-toggle {
+      display: flex;
+   }
+
+   .desktop-logout {
+      display: none;
+   }
+
+   /* THỨ NHẤT: Menu trượt chứa cả Logout bên trong */
+   .nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 260px;
+      height: 100vh;
+      background-color: #1a1a1a;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      transition: right 0.4s ease-in-out;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+      z-index: 999;
+   }
+
+   .nav.active {
+      right: 0;
+   }
+
+   .nav a {
+      font-size: 18px;
+      color: #FFFFFF;
+   }
+
+   .logout-mobile {
+      display: inline-block;
+      color: #f4801e;
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 10px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      width: 80%;
+      text-align: center;
+   }
+
+   .menu-toggle.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+   }
+   .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+   }
+   .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+   }
+
+   /* Footer: Chia 4 footer-mini thành 2 dòng 2 cột */
+   .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      align-items: flex-start;
+   }
+
+   .footer-stay {
+      grid-column: span 2;
+   }
+}
+
+
+/* ==========================================
+   4. `md` applies to small devices (landscape phones, less than 768px)
+   ========================================== */
+@media (max-width: 767.98px) {
+   .container {
+      max-width: 540px;
       padding: 0 20px;
    }
 
@@ -647,24 +809,16 @@ a {
       margin-bottom: 24px;
    }
 
-   /* --- 2. HEADER & HERO SCREEN --- */
+   /* --- HEADER & HERO SCREEN --- */
    .home-wrapper {
       padding: 30px 20px;
-   }
-
-   /* Ẩn menu chữ thông thường trên mobile (có thể thay bằng hamburger menu nếu cần) */
-   .nav {
-      display: none; 
-   }
-
-   .home-inner {
       justify-content: space-between;
    }
 
    .hero {
-      margin-top: 40px;
-      margin-bottom: 40px;
-      padding-top: 20px;
+      margin-top: auto;       
+      margin-bottom: 30px;    /* <-- BẠN TỰ CHỈNH SỐ NÀY ĐỂ KÉO CHỮ XUỐNG ĐÁY */
+      padding-top: 20px;      
    }
 
    .hero-content h1 {
@@ -674,7 +828,7 @@ a {
    }
 
    .hero-content {
-      gap: 20px;
+      gap: 20px;              
    }
 
    .hero-desc {
@@ -682,18 +836,24 @@ a {
       height: auto;
    }
 
+   /* GIỮ NGUYÊN KÍCH THƯỚC NHỎ VÀ NẰM NGANG CHO 2 NÚT NỀN HERO (GIỐNG BẢN GỐC) */
    .hero-buttons {
-      width: 100%;
-      flex-direction: column;
-      gap: 10px;
+      width: auto !important;
+      flex-direction: row !important;
+      gap: 12px !important;
    }
 
-   .hero-buttons .btn {
-      width: 100%;
-      max-width: 100% !important;
+   .hero-buttons .btn-orange {
+      max-width: 119px !important;
+      width: auto !important;
    }
 
-   /* --- 3. ABOUT SECTION --- */
+   .hero-buttons .btn-outline {
+      max-width: 141px !important;
+      width: auto !important;
+   }
+
+   /* --- ABOUT SECTION --- */
    .about {
       padding: 60px 0;
    }
@@ -705,19 +865,26 @@ a {
    .row, .row.reverse {
       flex-direction: column;
       gap: 30px;
+      text-align: left; 
+   }
+
+   .c1, .c2 {
+      max-width: 100%;
+      text-align: left; 
    }
 
    .background-img {
       width: 100%;
       height: 260px;
       border-radius: 30px;
+      margin: 0 auto;
    }
 
    .col h2 {
       font-size: 28px;
    }
 
-   /* --- 4. STATS BAR SECTION --- */
+   /* --- STATS BAR SECTION (Giữ form 2 dòng 2 cột chuẩn) --- */
    .stats {
       height: auto;
       padding: 30px 20px;
@@ -734,7 +901,7 @@ a {
       font-size: 32px;
    }
 
-   /* --- 5. ROOMS SECTION --- */
+   /* --- ROOMS SECTION --- */
    .rooms {
       padding: 60px 0;
    }
@@ -751,7 +918,7 @@ a {
       width: 100%;
    }
 
-   /* --- 6. SERVICES SECTION --- */
+   /* --- SERVICES SECTION --- */
    .services {
       padding: 60px 0;
    }
@@ -775,7 +942,7 @@ a {
       height: auto;
    }
 
-   /* --- 7. REVIEWS SECTION --- */
+   /* --- REVIEWS SECTION --- */
    .reviews {
       padding: 60px 0;
    }
@@ -789,34 +956,55 @@ a {
       width: 100%;
    }
 
-   /* --- 8. FOOTER SECTION --- */
+   /* --- FOOTER SECTION --- */
    .footer {
       padding: 60px 20px;
    }
-
-   .footer-grid {
-      flex-direction: column;
-      gap: 40px;
-      align-items: flex-start;
-   }
-
-   .footer-stay {
-      margin-top: 0;
-      width: 100%;
-   }
-
-   .footer-mini {
-      width: 100%;
-   }
 }
 
-/* --- TỐI ƯU THÊM CHO MÀN HÌNH RẤT NHỎ (<= 480px) --- */
-@media screen and (max-width: 480px) {
+
+/* ==========================================
+   5. `sm` applies to x-small devices (portrait phones, less than 576px)
+   ========================================== */
+@media (max-width: 575.98px) {
+   .container {
+      max-width: 100%;
+      padding: 0 16px;
+   }
+
    .hero-content h1 {
       font-size: 32px;
    }
    
    .center {
       font-size: 26px;
+   }
+
+   .hero {
+      margin-bottom: 20px; 
+   }
+
+   /* Đảm bảo màn hình nhỏ nút vẫn giữ nguyên bản ngang nhỏ gọn */
+   .hero-buttons {
+      width: auto !important;
+      flex-direction: row !important;
+      gap: 12px !important;
+   }
+
+   .hero-buttons .btn-orange {
+      max-width: 119px !important;
+      width: auto !important;
+   }
+
+   .hero-buttons .btn-outline {
+      max-width: 141px !important;
+      width: auto !important;
+   }
+
+   /* Stats vẫn giữ nguyên 2 dòng 2 cột ở màn hình nhỏ */
+   .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
    }
 }
