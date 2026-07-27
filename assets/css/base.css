@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Poppins'; 
     src: url('../fonts/Poppins-Regular.ttf') format('truetype');
-    font-weight: normal; 
+    font-weight: 400; 
     font-style: normal;
 }
 
@@ -10,7 +10,7 @@
 @font-face {
     font-family: 'Poppins'; 
     src: url('../fonts/Poppins-Bold.ttf') format('truetype');
-    font-weight: bold; 
+    font-weight: 700; 
     font-style: normal;
 }
 
@@ -18,7 +18,14 @@
 @font-face {
     font-family: 'Poppins'; 
     src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
-    font-weight: bold; 
+    font-weight: 600; 
+    font-style: normal;
+}
+/* 4. Khai báo kiểu chữ hơi thường (Medium) */
+@font-face {
+    font-family: 'Poppins'; 
+    src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500; 
     font-style: normal;
 }
 
@@ -63,7 +70,6 @@ a {
 }
 .section-label1 {
    text-align: center;        
-   padding-bottom: 100px;   
    color: #616161;         
    font-size: 16px;         
    display: flex;
@@ -81,7 +87,7 @@ a {
    display: flex;
    align-items: center;
    justify-content: center;
-   font-weight: bold;
+   font-weight: 700;
    gap: 10px;       
 }
 
@@ -100,7 +106,6 @@ a {
    font-size: 14px;
    font-weight: 600;
    height: 44px;
-   white-space: nowrap;
 }
 
 .btn-orange {
@@ -203,7 +208,6 @@ a {
    color: #f4801e;
 }
 
-/* Nội dung Hero tự nhiên không dùng margin âm */
 .hero {
    position: relative;
    z-index: 10;
@@ -217,10 +221,6 @@ a {
 .hero-content{
    max-width: 604px;
    height: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   gap: 32px;
 }
 .hero-content .small-text {
    font-size: 18px;
@@ -230,38 +230,32 @@ a {
 }
 
 .hero-content h1 {
-   max-width: 604px;
-   height: 192px;
    font-size: 64px;
    line-height: 150%;
    font-weight: 700;
+   letter-spacing: 0%;
+   margin-top: 16px;
 }
 
 .hero-desc {
-   max-width: 600px;
-   height: 66px;
+   font-weight: 500px;
    font-size: 16px;
    line-height: 140%;
+   margin-top: 32px;
    color: #EEEEEE;
 }
-
-.hero-buttons {
-   display: flex;
-   align-items: center;
-   width: 272px;
-   gap: 12px;
-}
-
-.hero-buttons .btn-orange{
-   max-width: 119px;
+.hero-buttons{
+   margin-top: 32px;
+   display:flex;
+   gap :12px;
 }
 .hero-buttons a{ 
    font-size: 14px;
    letter-spacing: 0.2px;
    line-height: 140%;
+   font-weight: 600;
 }
 .hero-buttons .btn-outline {
-   max-width: 141px;
    color: #FFFFFF;
    border: 1.5px solid #FFFFFF;
 }
@@ -274,51 +268,49 @@ a {
 
 /* --- 2. ABOUT SECTION--- */
 .about {    
-   padding: 100px;    
-   width: 100%; 
-   display: flex;
-   align-items: center;  /* Căn giữa toàn bộ nội dung bên trong theo chiều dọc */
-   justify-content: center;
+   padding: 100px 0;    
 }
 
 .about-content{
-   display: flex;
-   flex-direction: column;
-   gap: 100px;
+   margin-top:100px;
 }
 
 .row {
    display: flex;
    align-items: center;
    justify-content: center;
-   width: 100%;
    gap: 117px;
 }
 
-/* Khi có class .reverse, tự động đảo chiều cột ảnh và chữ */
-.row.reverse {
-   flex-direction: row-reverse;
+.col1, .col2{
+   padding: 19px 0;
 }
-
-.c1, .c2{
-   max-width: 650px;
-   width: 100%;
-   text-align: left;
-}
-.col h2 {
-   font-size: 36px;
-   margin-bottom: 20px;
+.col1 h2, .col2 h2 {
+   font-size: 40px;
    font-weight: 700;
 }
 
-.col p {
-   margin-bottom: 20px;
+.col1 p , .col2 p{
+   margin-top: 32px;
    color: #616161;
    font-weight: 500;
+   font-size: 16px;
+   line-height: 140%;
+   letter-spacing: 0.2px;
 }
-
-.col .smoke-word {
+.col1 .smoke-word, .col2 .smoke-word{
+   margin-top: 16px;
    color: #888888;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 140%;
+   letter-spacing: 0.2px;
+}
+.col1 a, .col2 a{
+   margin-top: 32px;
+}
+.reverse{
+   margin-top: 100px;
 }
 
 .background-img {
@@ -328,9 +320,6 @@ a {
    border-radius: 50px;
    padding: 16px;
    background-color: #FFFFFF;
-   display: flex;
-   align-items: center;
-   justify-content: center;
 }
 
 .background-img img {
@@ -343,24 +332,15 @@ a {
 
 /* --- 3. STATS BAR SECTION --- */
 .stats {
-  width: 100% !important;
   background-color: #f4801e;
-  padding: 20px 40px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto !important;
-  box-sizing: border-box;
+  padding: 20px 0;
 }
 
 
 .stats-grid {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   text-align: center;
-  width: 100%;
-  max-width: 1200px;
   gap: 20px;
 }
 
@@ -621,7 +601,6 @@ a {
    display: flex;
    flex-direction: column;
    gap: 16px;
-   margin-top: -6px;
 }
 
 .footer .logo {
