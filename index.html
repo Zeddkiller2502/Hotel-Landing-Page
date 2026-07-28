@@ -120,19 +120,19 @@
  <!-- STATS -->
  <section class="stats">
    <div class="container stats-grid">
-     <div>
+     <div class="stats-card">
        <div class="stats-number"><p>8</p></div>
        <div class ="stats-word"><p>Years of Service</p></div>
      </div>
-     <div>
+     <div class="stats-card">
         <div class="stats-number"><p>459</p></div>
        <div class ="stats-word"><p>Sq. Meter Area</p></div>
      </div>
-     <div>
+     <div class="stats-card">
        <div class="stats-number"><p>50</p></div>
        <div class ="stats-word"><p>Nice Rooms</p></div>
      </div>
-     <div>
+     <div class="stats-card">
        <div class="stats-number"><p>3786</p></div>
        <div class ="stats-word"><p>Happy Visitors</p></div>
      </div>
@@ -192,17 +192,17 @@
           <div class="services-background">
             <div class="service-img"><img src="assets/images/icons/building 1.svg" alt=""></div>
             <div class="service-under">
-              <div class="service-card-namemark"><h3>Rooms &amp; Appartment</h3></div>
+              <div class="service-card-namemark"><p>Rooms &amp; Appartment</p></div>
               <div class="service-card-word"><p class="p1">Figma ipsum component variant main layer.</p></div>
             </div>
           </div>
         </div>
-        <div class="service-card active">
+        <div class="service-card">
           <div class="services-background">
-            <div class="service-img"><img src="assets/images/icons/ranking-podium 1.png" alt=""></div>
+            <div class="service-img"><img src="assets/images/icons/ranking-podium 1.svg" alt=""></div>
             <div class="service-under">
-              <div class="service-card-namemark"><h3>Sports &amp; Gaming</h3></div>
-              <div class="service-card-word"><p>Figma ipsum component variant main layer.</p></div>
+              <div class="service-card-namemark"><p>Sports &amp; Gaming</p></div>
+              <div class="service-card-word"><p class="p1">Figma ipsum component variant main layer.</p></div>
             </div>
           </div>
         </div>
@@ -210,7 +210,7 @@
             <div class="services-background">
             <div class="service-img"><img src="assets/images/icons/restaurant 1.svg" alt=""></div>
             <div class="service-under">
-              <div class="service-card-namemark"><h3>Food &amp; Resturant</h3></div>
+              <div class="service-card-namemark"><p>Food &amp; Resturant</p></div>
               <div class="service-card-word"><p class="p1">Figma ipsum component variant main layer.</p></div>
             </div>
           </div>
@@ -219,7 +219,7 @@
             <div class="services-background">
             <div class="service-img"><img src="assets/images/icons/candle-lotus-yoga 1.svg" alt=""></div>
             <div class="service-under">
-              <div class="service-card-namemark"><h3>Spa &amp; Fitness</h3></div>
+              <div class="service-card-namemark"><p>Spa &amp; Fitness</p></div>
               <div class="service-card-word"><p class="p1">Figma ipsum component variant main layer.</p></div>
             </div>
           </div>
@@ -228,7 +228,7 @@
             <div class="services-background">
               <div class="service-img"><img src="assets/images/icons/glass-cheers 1.svg" alt=""></div>
               <div class="service-under">
-                <div class="service-card-namemark"><h3>Event &amp; Party</h3></div>
+                <div class="service-card-namemark"><p>Event &amp; Party</p></div>
                 <div class="service-card-word"><p class="p1">Figma ipsum component variant main layer.</p></div>
             </div>
           </div>
@@ -237,7 +237,7 @@
           <div class="services-background">
             <div class="service-img"><img src="assets/images/icons/gym 1.svg" alt=""></div>
             <div class="service-under">
-              <div class="service-card-namemark"><h3>GYM &amp; Yoga</h3></div>
+              <div class="service-card-namemark"><p>GYM &amp; Yoga</p></div>
               <div class="service-card-word"><p class="p1">Figma ipsum component variant main layer.</p></div>
             </div>
           </div>
@@ -303,16 +303,24 @@
 
  <!-- FOOTER -->
  <footer class="footer" id="contact">
+  <div class="container">
     <div class="footer-grid">
       <div class="footer-stay">
         <div class="logo">Just<span class="orange">Stay</span></div>
-        <p>Recusandae quos nesciunt veniam eum quia.</p>
-        <p><a href="mailto:shaikhsaad256@gmail.com">shaikhsaad256@gmail.com</a></p>
+        <p class="footer-word">Recusandae quos nesciunt veniam eum quia.</p>
+        <p class="footer-email"><a href="mailto:shaikhsaad256@gmail.com">shaikhsaad256@gmail.com</a></p>
       </div>
       <div class="footer-mini">
-        <div class="quick-link">
-          <h4>Quick Links</h4>
-        </div>
+          <p class="quick-link">Quick Links</p>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#services">Services</a></li>
+          </ul>
+      </div>
+      <div class="footer-mini">
+        <p class="quick-link">Quick Links</p>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
@@ -321,9 +329,7 @@
         </ul>
       </div>
       <div class="footer-mini">
-        <div class="quick-link">
-          <h4>Quick Links</h4>
-        </div>
+        <p class="quick-link">Quick Links</p>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
@@ -332,9 +338,7 @@
         </ul>
       </div>
       <div class="footer-mini">
-        <div class="quick-link">
-          <h4>Quick Links</h4>
-        </div>
+        <p class="quick-link">Quick Links</p>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
@@ -342,17 +346,7 @@
           <li><a href="#services">Services</a></li>
         </ul>
       </div>
-      <div class="footer-mini">
-        <div class="quick-link">
-          <h4>Quick Links</h4>
-        </div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#rooms">Rooms</a></li>
-          <li><a href="#services">Services</a></li>
-        </ul>
-      </div>
+    </div>
     </div>
  </footer>
 </body>

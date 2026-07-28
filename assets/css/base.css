@@ -64,7 +64,6 @@ a {
 
 .center {
    text-align: center;
-   margin-bottom: 40px;
    font-size: 40px;
    font-weight: 700;
 }
@@ -80,8 +79,7 @@ a {
 }
 .section-label2 {
    text-align: center;   
-   margin-bottom: x;     
-   padding-bottom: 15px;    
+   padding-bottom: 24px;    
    color: #616161;          
    font-size: 16px; 
    display: flex;
@@ -143,13 +141,12 @@ a {
    position: relative;
    z-index: 5;
    width: 100%;
-   min-height: 100vh; /* Chiều cao phủ kín màn hình */
+   min-height: 100vh;   
    display: flex;
    flex-direction: column;
    padding: 50px 80px 80px 80px;
 }
 
-/* Ảnh nền tuyệt đối bao phủ toàn màn hình */
 .home-bg {
    position: absolute;
    inset: 0;
@@ -166,7 +163,7 @@ a {
    content: "";
    position: absolute;
    inset: 0;              
-   background: rgba(0, 0, 0, 0.5); /* Lớp phủ tối màu để nổi bật text */
+   background: rgba(0, 0, 0, 0.5);
    z-index: 2;
    padding: 50px 80px 80px 80px;
 }
@@ -347,13 +344,18 @@ a {
 .stats-number {
    color: #FFFFFF;
    font-size: 42px;
-   font-weight: 500;
+   font-weight: 600;
+   line-height: 140%;
+   letter-spacing: 0.2px;
 }
 
 .stats-word {
    color: #FFFFFF;
    font-size: 14px;
    opacity: 0.9;
+   font-weight: 500;
+   line-height: 140%;
+   letter-spacing: 0.2px;
 }
 
 
@@ -363,15 +365,13 @@ a {
    padding: 100px 0px;
 }
 .rooms-grid {
-   display: flex;              
-   gap: 48px;                     
-   width: 100%;
+   display: flex;                                 
    margin-top: 100px;
+   gap: 48px;
 }
 
 .room-card {
    background-color: #FFFFFF;
-   max-width: 380px;
    overflow: hidden;
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
    transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -384,15 +384,10 @@ a {
 }
 
 .room-card-background{
-   display: flex;
-   gap: 8px;
-   flex-direction: column;
-   height: 98px;
    padding: 24px 16px;
 }
 .room-card-img {
    width: 100%;
-   height: 250px;
    object-fit: cover;
 }
 
@@ -410,6 +405,7 @@ a {
    font-weight: 400;
    letter-spacing: 0.2px;
    line-height: 140%;
+   margin-top: 8px;  
 }
 
 
@@ -433,55 +429,26 @@ a {
    text-align: center;
    padding: 64px 32px;
    transition: all 0.3s ease;
-   width: 350px;
-   height: 258px;
-   display: flex;
-   gap: 10px
+   flex: 0 0 calc((100% - 48px * 2) / 3);
 }
 
-.service-img {
-   width: 36px;
-   height: 36px;
-}
 
 .service-card-namemark {
-   font-size: 18px;
-   font-weight: 600;
-   margin-bottom: 12px;
+   font-size: 20px;
+   font-weight: 700;
+   line-height: 140%;
+   letter-spacing: 0.2px;
+   margin-top: 32px;
    color: #424242;
 }
 
 .service-card-word {
    font-size: 12px;
+   font-weight: 500;
    color: #9E9E9E;
-   line-height: 1.5;
-}
-
-.services-background{
-   width: 286px;
-   height: 132px;
-   display:flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 32px;
-}
-.service-card-namemark{
-   font-weight: 600;
-}
-/* 2. Active state */
-.service-card.active {
-   background-color: #f4801e;
-   border-color: #f4801e;
-   color: #FFFFFF;
-}
-
-.service-card.active h3,
-.service-card.active p {
-   color: #FFFFFF;
-}
-
-.service-card.active .service-img img {
-   filter: brightness(0) invert(1);
+   line-height: 100%;
+   letter-spacing: 0.2px;
+   margin-top: 16px;
 }
 
 /* 3. Hover — card thường */
@@ -490,7 +457,6 @@ a {
    border-color: #f4801e;
 }
 
-.service-card:not(.active):hover h3,
 .service-card:not(.active):hover p {
    color: #FFFFFF;
 }
@@ -498,20 +464,9 @@ a {
 .service-card:not(.active):hover .service-img img {
    filter: brightness(0) invert(1);
 }
-
-/* 4. Hover — card active (đảo màu) */
-.service-card.active:hover {
-   background-color: #FFFFFF;
-   border-color: #f4801e;
-}
-
-.service-card.active:hover h3,
-.service-card.active:hover p {
-   color: #f4801e;
-}
-
-.service-card.active:hover .service-img img {
-   filter: brightness(0) saturate(100%) invert(48%) sepia(89%) saturate(1490%) hue-rotate(1deg) brightness(103%) contrast(101%);
+.service-card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 /* --- 6. TESTIMONIALS (REVIEWS) --- */
 .reviews {
@@ -522,120 +477,105 @@ a {
 .reviews-grid {
    display: flex;      
    justify-content: space-between; 
-   gap: 32px;
+   gap: 15px;
+   margin-top: 100px;
 }
 
 .review-card {
    text-align: center;
    padding: 16px 24px;
-   display: flex;
-   flex-direction: column;
    align-items: center;
-   gap: 24px;
-}
-
-.review-icon {
-   width: 30px;
-   height: 30px;
-   
-}
-.review-card-top{
-   max-width: 250px;
-   height: 114px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 18px;
 }
 
 .review-card-bottom{
-   max-width: 193px;
    text-align: center;
-   display: flex;
-   flex-direction: column;
-   gap: 8px;
 }
-.review-icon img {
-   width: 100%;
-   height: 100%;
-}
+
 .review-cap {
    color: #757575;
    font-weight: 500;
    line-height: 140%;
    letter-spacing: 0.2px;
-   max-width: 250px;
-   width: 100%;
-   margin: 0 auto 0 auto;
+   margin-top: 18px;
+   
 }
-
 .review-namemark {
    font-size: 16px;
    font-weight:600;
    color: #424242;
-   margin-bottom: 4px;
    line-height: 140%;
    letter-spacing: 0.2px;
+   margin-top: 24px;
 }
 
 .review-email {
+   font-weight: 500;
+   margin-top: 8px;
    font-size: 12px;
+   line-height: 100%;
+   letter-spacing: 0.2px;
    color: #9E9E9E;
 }
 
 
 /* --- 7. FOOTER SECTION --- */
 .footer {
-   padding: 100px 80px;
+   padding: 100px 0;
 }
 
 .footer-grid {
    display: flex;            
-   justify-content: center;   
-   align-items: flex-start;   
    justify-content: space-between;
-   flex-wrap: wrap;          
+   gap: 117px;
 }
 
-.footer-stay {
-   display: flex;
-   flex-direction: column;
-   gap: 16px;
-}
-
-.footer .logo {
+.logo{
+   font-weight: 700;
+   font-size: 24px;
+   line-height: 120%;
+   letter-spacing: 0%;
    color: #424242;
 }
 
 .footer-stay p {
    color: #9E9E9E;
    font-size: 14px;
+   font-weight: 500;
+   line-height: 140%;
+   letter-spacing: 0.2px;
 }
 
-.footer-mini {
-   display: flex;
-   flex-direction: column;
-   gap: 16px;
+.footer-word{
+   margin-top:24px;
+}
+.footer-email{
+   margin-top:16px;
 }
 
-.footer-mini h4 {
+.quick-link {
    font-size: 16px;
    font-weight: 600;
    color: #424242;
+   line-height: 140%;
+   letter-spacing: 0.2px;
 }
 
 .footer-mini ul{
-   display: flex;
-   flex-direction: column;
-   gap: 16px;
    list-style: none;
    padding: 0;
+   margin-top:24px;
 }
 .footer-mini a {
    color: #9E9E9E;
    font-size: 14px;
+   font-weight: 500;
+   line-height: 140%;
+   letter-spacing: 0.2px;
 }
 
+.footer-mini li{
+   margin-top: 16px;
+}
 .footer-mini a:hover {
    color: #f4801e;
 }
@@ -713,38 +653,38 @@ a {
 @media (max-width: 1199.98px) {
    /* Ép container và toàn bộ trang không bị bóp méo lỡ cỡ */
    .container {
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 0 24px !important;
+      width: 100% ;
+      max-width: 100% ;
+      padding: 0 24px ;
    }
 
    /* Ép toàn bộ màn hình Home và wrapper phủ kín 100% không chừa khoảng trống */
    .home-screen,
    .home-wrapper,
    .home-bg {
-      width: 100% !important;
-      max-width: 100% !important;
-      left: 0 !important;
-      right: 0 !important;
+      width: 100% ;
+      max-width: 100% ;
+      left: 0 ;
+      right: 0 ;
    }
 
    .home-wrapper {
-      padding: 30px 24px !important;
+      padding: 30px 24px ;
    }
 
    .home-bg img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
+      width: 100% ;
+      height: 100% ;
+      object-fit: cover ;
    }
 
    /* Kích hoạt Hamburger Menu */
    .menu-toggle {
-      display: flex !important;
+      display: flex ;
    }
 
    .desktop-logout {
-      display: none !important;
+      display: none ;
    }
 
    /* Menu trượt di động */
@@ -774,8 +714,8 @@ a {
    }
 
    .logout-mobile {
-      display: inline-block !important;
-      color: #f4801e !important;
+      display: inline-block ;
+      color: #f4801e ;
       font-weight: 600;
       font-size: 18px;
       margin-top: 10px;
@@ -823,50 +763,50 @@ a {
    }
 
    .stats-number {
-      font-size: 32px !important; /* Chỉ thu nhỏ chữ số lại cho vừa khít 4 cột trên iPad */
+      font-size: 32px ; /* Chỉ thu nhỏ chữ số lại cho vừa khít 4 cột trên iPad */
    }
    .stats-word {
-      font-size: 12px !important;
+      font-size: 12px ;
    }
 
    /* --- Cấu hình lại phần Rooms cho các màn hình dưới 1200px --- */
    .rooms-grid {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      margin-top: 40px !important;
-      gap: 30px !important;
-      width: 100% !important;
+      display: flex ;
+      flex-direction: column ;
+      align-items: center ;
+      margin-top: 40px ;
+      gap: 30px ;
+      width: 100% ;
    }
 
    .room-card {
-      width: 100% !important;
-      max-width: 380px !important; /* Trả về đúng kích thước chuẩn 380px như bản Desktop gốc để card không bị bè ngang */
-      margin: 0 auto !important;
+      width: 100% ;
+      max-width: 380px ; /* Trả về đúng kích thước chuẩn 380px như bản Desktop gốc để card không bị bè ngang */
+      margin: 0 auto ;
    }
 
    /* --- Cấu hình lại phần Services cho các màn hình dưới 1200px --- */
    .services-grid {
-      display: flex !important;
-      flex-direction: column !important; /* Xếp dọc các card xuống dưới */
-      align-items: center !important;    /* Canh giữa các card */
-      margin-top: 40px !important;
-      gap: 24px !important;              /* Khoảng cách giữa các card */
+      display: flex ;
+      flex-direction: column ; /* Xếp dọc các card xuống dưới */
+      align-items: center ;    /* Canh giữa các card */
+      margin-top: 40px ;
+      gap: 24px ;              /* Khoảng cách giữa các card */
    }
 
    .service-card {
-      /* width: 100% !important; */
-      max-width: 450px !important;       /* Cố định độ rộng tối đa để card không bị kéo dãn ngang */
-      height: auto !important;
-      padding: 40px 24px !important;
-      margin: 0 auto !important;         /* Canh giữa hoàn hảo */
-      display: flex !important;
-      justify-content: center !important;
+      /* width: 100% ; */
+      max-width: 450px ;       /* Cố định độ rộng tối đa để card không bị kéo dãn ngang */
+      height: auto ;
+      padding: 40px 24px ;
+      margin: 0 auto ;         /* Canh giữa hoàn hảo */
+      display: flex ;
+      justify-content: center ;
    }
 
    .services-background {
-      width: 100% !important;
-      height: auto !important;
+      width: 100% ;
+      height: auto ;
    }
 
    .services-background {
@@ -916,19 +856,19 @@ a {
    }
 
    .hero-buttons {
-      width: auto !important;
-      flex-direction: row !important;
-      gap: 12px !important;
+      width: auto ;
+      flex-direction: row ;
+      gap: 12px ;
    }
 
    .hero-buttons .btn-orange {
-      max-width: 119px !important;
-      width: auto !important;
+      max-width: 119px ;
+      width: auto ;
    }
 
    .hero-buttons .btn-outline {
-      max-width: 141px !important;
-      width: auto !important;
+      max-width: 141px ;
+      width: auto ;
    }
 
    .footer {
@@ -942,9 +882,9 @@ a {
    }
 
    .stats-grid {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important; /* Chuyển thành 2 dòng 2 cột trên điện thoại */
-      gap: 24px !important;
+      display: grid ;
+      grid-template-columns: repeat(2, 1fr) ; /* Chuyển thành 2 dòng 2 cột trên điện thoại */
+      gap: 24px ;
    }
 }
 
@@ -991,19 +931,19 @@ a {
    }
 
    .hero-buttons {
-      width: auto !important;
-      flex-direction: row !important;
-      gap: 12px !important;
+      width: auto ;
+      flex-direction: row ;
+      gap: 12px ;
    }
 
    .hero-buttons .btn-orange {
-      max-width: 119px !important;
-      width: auto !important;
+      max-width: 119px ;
+      width: auto ;
    }
 
    .hero-buttons .btn-outline {
-      max-width: 141px !important;
-      width: auto !important;
+      max-width: 141px ;
+      width: auto ;
    }
 
    /* --- ABOUT SECTION --- */
@@ -1138,19 +1078,19 @@ a {
    }
 
    .hero-buttons {
-      width: auto !important;
-      flex-direction: row !important;
-      gap: 12px !important;
+      width: auto ;
+      flex-direction: row ;
+      gap: 12px ;
    }
 
    .hero-buttons .btn-orange {
-      max-width: 119px !important;
-      width: auto !important;
+      max-width: 119px ;
+      width: auto ;
    }
 
    .hero-buttons .btn-outline {
-      max-width: 141px !important;
-      width: auto !important;
+      max-width: 141px ;
+      width: auto ;
    }
 
    .stats-grid {
