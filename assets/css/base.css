@@ -361,7 +361,8 @@ a {
    padding: 100px 0px;
 }
 .rooms-grid {
-   display: flex;                                 
+   display: flex;   
+   justify-content: space-between;                              
    margin-top: 100px;
    gap: 48px;
 }
@@ -632,7 +633,7 @@ a {
 
 
 /* ==========================================
-   1. `xxl` applies to x-large devices (less than 1400px)
+   1.(less than 1400px)
    ========================================== */
 @media (max-width: 1399.98px) {
    .container {
@@ -642,7 +643,7 @@ a {
 
 
 /* ==========================================
-   2. `xl` & `lg` & `md` (Áp dụng từ 1199.98px trở xuống - Chống hở khoảng trắng hoàn toàn)
+   2.(Áp dụng từ 1199.98px trở xuống - Chống hở khoảng trắng hoàn toàn)
    ========================================== */
 @media (max-width: 1199.98px) {
    /* Ép container và toàn bộ trang không bị bóp méo lỡ cỡ */
@@ -831,9 +832,9 @@ a {
 
 
 /* ==========================================
-   3. `md` & `sm` (Màn hình nhỏ dưới 768px và 576px)
+   3.(Màn hình nhỏ dưới 768px và 576px)
    ========================================== */
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
    .center {
       font-size: 28px;
       margin-bottom: 20px;
@@ -884,7 +885,7 @@ a {
 
 
 /* ==========================================
-   4. `md` applies to small devices (landscape phones, less than 768px)
+   4.(landscape phones, less than 768px)
    ========================================== */
 @media (max-width: 767.98px) {
    .container {
@@ -1051,7 +1052,7 @@ a {
 
 
 /* ==========================================
-   5. `sm` applies to x-small devices (portrait phones, less than 576px)
+   5.(portrait phones, less than 576px)
    ========================================== */
 @media (max-width: 575.98px) {
    .container {
