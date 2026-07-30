@@ -78,6 +78,11 @@
         </div>
 
         <div class="row reverse">
+          <div class="col">
+            <div class="background-img">
+            <img src="assets/images/backgrounds/Rectangle 11.png" alt="Why choose JustStay" />
+            </div>
+          </div>
           <div class="col2">
             <h2>Why Choose us?</h2>
             <p>
@@ -87,11 +92,6 @@
               Autem temporibus, neque voluptas officiis molestiae. At vero eos et accusamus et iusto odio dignissimos ducimus. And why is it that the one time you need a pen, it’s always out of ink?
             </p>
             <a href="#" class="btn btn-outline">Read More</a>
-          </div>
-          <div class="col">
-            <div class="background-img">
-            <img src="assets/images/backgrounds/Rectangle 11.png" alt="Why choose JustStay" />
-            </div>
           </div>
         </div>
       </div>
@@ -331,19 +331,31 @@
     </div>
     </div>
  </footer>
- <script>
+<script>
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
-  menuToggle.addEventListener('click', () => {
+  // Bấm vào nút hamburger để mở/đóng menu
+  menuToggle.addEventListener('click', (event) => {
+    event.stopPropagation(); // Ngăn sự kiện lan truyền để tránh bị đóng ngay lập tức
     menuToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
   });
+
+  // Bấm vào các liên kết bên trong menu thì tự động đóng menu lại
   document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', () => {
       menuToggle.classList.remove('active');
       navMenu.classList.remove('active');
     });
+  });
+
+  // Bấm vào bất kỳ đâu bên ngoài menu (vùng trống) để tắt bảng đen
+  document.addEventListener('click', (event) => {
+    if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
   });
 </script>
 </body>

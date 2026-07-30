@@ -307,6 +307,7 @@ a {
 }
 .reverse{
    margin-top: 100px;
+   flex-direction: row-reverse;
 }
 
 .background-img {  
@@ -585,9 +586,9 @@ a {
 
 /* ==========================================
    CSS CHO HAMBURGER MENU & RESPONSIVE BREAKPOINTS
+   (KHÔNG DÙNG !important)
    ========================================== */
 
-/* Mặc định trên Desktop: Ẩn nút hamburger, hiện menu ngang */
 .menu-toggle {
    display: none;
    flex-direction: column;
@@ -595,7 +596,8 @@ a {
    width: 30px;
    height: 21px;
    cursor: pointer;
-   z-index: 100;
+   z-index: 1005; /* Đặt cao hơn menu đen (900) để nút X luôn nổi lên trên và bấm được */
+   position: relative;
 }
 
 .menu-toggle span {
@@ -611,38 +613,8 @@ a {
    display: none;
 }
 
-/* ==========================================
-   CSS CHO HAMBURGER MENU & RESPONSIVE BREAKPOINTS
-   ========================================== */
 
-/* Mặc định trên Desktop: Ẩn nút hamburger, hiện menu ngang */
-.menu-toggle {
-   display: none;
-   flex-direction: column;
-   justify-content: space-between;
-   width: 30px;
-   height: 21px;
-   cursor: pointer;
-   z-index: 100;
-}
-
-.menu-toggle span {
-   display: block;
-   width: 100%;
-   height: 3px;
-   background-color: #FFFFFF;
-   border-radius: 3px;
-   transition: all 0.3s ease;
-}
-
-.logout-mobile {
-   display: none; /* Chỉ hiện trong menu mobile */
-}
-
-
-/* ==========================================
-   1.(less than 1400px)
-   ========================================== */
+/* 1. xxl (less than 1400px) */
 @media (max-width: 1399.98px) {
    .container {
       max-width: 1140px;
@@ -650,47 +622,41 @@ a {
 }
 
 
-/* ==========================================
-   2.(Áp dụng từ 1199.98px trở xuống - Chống hở khoảng trắng hoàn toàn)
-   ========================================== */
+/* 2. xl, lg, md (Áp dụng từ 1199.98px trở xuống) */
 @media (max-width: 1199.98px) {
-   /* Ép container và toàn bộ trang không bị bóp méo lỡ cỡ */
    .container {
-      width: 100% ;
-      max-width: 100% ;
-      padding: 0 24px ;
+      width: 100%;
+      max-width: 100%;
+      padding: 0 24px;
    }
 
-   /* Ép toàn bộ màn hình Home và wrapper phủ kín 100% không chừa khoảng trống */
    .home-screen,
    .home-wrapper,
    .home-bg {
-      width: 100% ;
-      max-width: 100% ;
-      left: 0 ;
-      right: 0 ;
+      width: 100%;
+      max-width: 100%;
+      left: 0;
+      right: 0;
    }
 
    .home-wrapper {
-      padding: 30px 24px ;
+      padding: 30px 24px;
    }
 
    .home-bg img {
-      width: 100% ;
-      height: 100% ;
-      object-fit: cover ;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
    }
 
-   /* Kích hoạt Hamburger Menu */
    .menu-toggle {
-      display: flex ;
+      display: flex;
    }
 
    .desktop-logout {
-      display: none ;
+      display: none;
    }
 
-   /* Menu trượt di động */
    .nav {
       position: fixed;
       top: 0;
@@ -704,7 +670,7 @@ a {
       gap: 24px;
       transition: right 0.4s ease-in-out;
       box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-      z-index: 999;
+      z-index: 900;
    }
 
    .nav.active {
@@ -717,8 +683,8 @@ a {
    }
 
    .logout-mobile {
-      display: inline-block ;
-      color: #f4801e ;
+      display: inline-block;
+      color: #f4801e;
       font-weight: 600;
       font-size: 18px;
       margin-top: 10px;
@@ -738,19 +704,45 @@ a {
       transform: translateY(-9px) rotate(-45deg);
    }
 
-   /* Chỉnh bố cục About, Stats, Rooms, Services, Footer cho mượt mà */
-   .row, .row.reverse {
+   .stats {
+      height: auto;
+      padding: 20px 10px;
+   }
+
+   .stats-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+   }
+
+   .stats-number {
+      font-size: 30px;
+   }
+
+   .stats-word {
+      font-size: 12px;
+   }
+
+   /* Cấu trúc About thành cột dọc và căn lề an toàn cho .col1, .col2 */
+   .about-content .row, 
+   .about-content .row.reverse {
       flex-direction: column;
       gap: 30px;
       text-align: left;
    }
 
-   .c1, .c2 {
+   /* Bổ sung .col1 và .col2 vào đây để khớp với file HTML của bạn */
+   .about-content .col1, 
+   .about-content .col2 {
       max-width: 100%;
       text-align: left;
+      padding: 100px; /* Thêm lề trái phải an toàn cho tablet/iPad */
    }
 
-   .background-img {
+   .about-content .background-img {
       width: 100%;
       max-width: 100%;
       height: 280px;
@@ -758,61 +750,39 @@ a {
       margin: 0 auto;
    }
 
-   .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+   .rooms-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      gap: 30px;
       width: 100%;
    }
 
-   .stats-number {
-      font-size: 32px ; /* Chỉ thu nhỏ chữ số lại cho vừa khít 4 cột trên iPad */
-   }
-   .stats-word {
-      font-size: 12px ;
-   }
-
-   /* --- Cấu hình lại phần Rooms cho các màn hình dưới 1200px --- */
-   .rooms-grid {
-      display: flex ;
-      flex-direction: column ;
-      align-items: center ;
-      margin-top: 40px ;
-      gap: 30px ;
-      width: 100% ;
+   .rooms-grid .room-card {
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
    }
 
-   .room-card {
-      width: 100% ;
-      max-width: 380px ; /* Trả về đúng kích thước chuẩn 380px như bản Desktop gốc để card không bị bè ngang */
-      margin: 0 auto ;
-   }
-
-   /* --- Cấu hình lại phần Services cho các màn hình dưới 1200px --- */
    .services-grid {
-      display: flex ;
-      flex-direction: column ; /* Xếp dọc các card xuống dưới */
-      align-items: center ;    /* Canh giữa các card */
-      margin-top: 40px ;
-      gap: 24px ;              /* Khoảng cách giữa các card */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      gap: 20px;
    }
 
-   .service-card {
-      /* width: 100% ; */
-      max-width: 450px ;       /* Cố định độ rộng tối đa để card không bị kéo dãn ngang */
-      height: auto ;
-      padding: 40px 24px ;
-      margin: 0 auto ;         /* Canh giữa hoàn hảo */
-      display: flex ;
-      justify-content: center ;
+   .services-grid .service-card {
+      max-width: 450px;
+      height: auto;
+      padding: 40px 24px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
    }
 
-   .services-background {
-      width: 100% ;
-      height: auto ;
-   }
-
-   .services-background {
+   .services-grid .services-background {
       width: 100%;
       height: auto;
    }
@@ -822,7 +792,7 @@ a {
       gap: 30px;
    }
 
-   .review-card {
+   .reviews-grid .review-card {
       width: 100%;
    }
 
@@ -833,245 +803,90 @@ a {
       align-items: flex-start;
    }
 
-   .footer-stay {
+   .footer-grid .footer-stay {
       grid-column: span 2;
    }
 }
 
-
-/* ==========================================
-   3.(Màn hình nhỏ dưới 768px và 576px)
-   ========================================== */
-@media (max-width: 991.98px) {
-   .center {
-      font-size: 28px;
-      margin-bottom: 20px;
-   }
-
-   .hero {
-      margin-top: auto;       
-      margin-bottom: 30px;    
-      padding-top: 20px;      
-   }
-
-   .hero-content h1 {
-      font-size: 34px;
-   }
-
-   .hero-buttons {
-      width: auto ;
-      flex-direction: row ;
-      gap: 12px ;
-   }
-
-   .hero-buttons .btn-orange {
-      max-width: 119px ;
-      width: auto ;
-   }
-
-   .hero-buttons .btn-outline {
-      max-width: 141px ;
-      width: auto ;
-   }
-
-   .footer {
-      padding: 60px 20px;
-   }
-}
-
-@media (max-width: 575.98px) {
-   .hero-content h1 {
-      font-size: 28px;
-   }
-
-   .stats-grid {
-      display: grid ;
-      grid-template-columns: repeat(2, 1fr) ; /* Chuyển thành 2 dòng 2 cột trên điện thoại */
-      gap: 24px ;
-   }
-}
-
-
-/* ==========================================
-   4.(landscape phones, less than 768px)
-   ========================================== */
+/* 3. md (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-   .container {
-      max-width: 540px;
-      padding: 0 20px;
-   }
-
-   .center {
-      font-size: 30px;
-      margin-bottom: 24px;
-   }
-
-   /* --- HEADER & HERO SCREEN --- */
-   .home-wrapper {
-      padding: 30px 20px;
-      justify-content: space-between;
-   }
-
-   .hero {
-      margin-top: auto;       
-      margin-bottom: 30px;    /* <-- BẠN TỰ CHỈNH SỐ NÀY ĐỂ KÉO CHỮ XUỐNG ĐÁY */
-      padding-top: 20px;      
-   }
-
-   .hero-content h1 {
-      font-size: 38px;
-      height: auto;
-      line-height: 1.3;
-   }
-
-   .hero-content {
-      gap: 20px;              
-   }
-
-   .hero-desc {
-      font-size: 14px;
-      height: auto;
-   }
-
-   .hero-buttons {
-      width: auto ;
-      flex-direction: row ;
-      gap: 12px ;
-   }
-
-   .hero-buttons .btn-orange {
-      max-width: 119px ;
-      width: auto ;
-   }
-
-   .hero-buttons .btn-outline {
-      max-width: 141px ;
-      width: auto ;
-   }
-
-   /* --- ABOUT SECTION --- */
    .about {
       padding: 60px 0;
    }
 
    .about-content {
-      gap: 50px;
+      margin-top: 40px;
+      gap: 60px;
    }
 
-   .row, .row.reverse {
+   .about .about-content .row, 
+   .about .about-content .row.reverse {
+      display: flex;
       flex-direction: column;
-      gap: 30px;
-      text-align: left; 
+      gap: 24px; 
+      text-align: left;
    }
 
-   .c1, .c2 {
-      max-width: 100%;
-      text-align: left; 
-   }
-
-   .background-img {
+   .about .background-img {
       width: 100%;
-      height: 260px;
+      height: 250px;
       border-radius: 30px;
-      margin: 0 auto;
+      padding: 12px;
+      background-color: #FFFFFF;
    }
 
-   .col h2 {
-      font-size: 28px;
-   }
-
-   /* --- STATS BAR SECTION (Giữ form 2 dòng 2 cột chuẩn) --- */
-   .stats {
-      height: auto;
-      padding: 30px 20px;
-   }
-
-   .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+   .about .background-img img {
       width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      object-fit: cover;
    }
 
-   .stats-number {
-      font-size: 32px;
-   }
-
-   /* --- ROOMS SECTION --- */
-   .rooms {
-      padding: 60px 0;
-   }
-
-   .rooms-grid {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 40px;
-      gap: 30px;
-   }
-
-   .room-card {
-      max-width: 100%;
+   /* Căn lề trái phải an toàn cho phần chữ About */
+   .about .col1, 
+   .about .col2 {
       width: 100%;
+      padding: 0 10px;
    }
 
-   /* --- SERVICES SECTION --- */
-   .services {
-      padding: 60px 0;
+   .about .col1 h2, 
+   .about .col2 h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
    }
 
-   .services-grid {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 40px;
-      gap: 20px;
-   }
-
-   .service-card {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      padding: 40px 20px;
-   }
-
-   .services-background {
-      width: 100%;
-      height: auto;
-   }
-
-   /* --- REVIEWS SECTION --- */
-   .reviews {
-      padding: 60px 0;
-   }
-
-   .reviews-grid {
-      flex-direction: column;
-      gap: 40px;
-   }
-
-   .review-card {
-      width: 100%;
-   }
-
-   /* --- FOOTER SECTION --- */
-   .footer {
-      padding: 60px 20px;
+   .about .col1 p, 
+   .about .col2 p {
+      margin-top: 15px;
    }
 }
 
 
-/* ==========================================
-   5.(portrait phones, less than 576px)
-   ========================================== */
+/* 4. sm (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
    .container {
       max-width: 100%;
-      padding: 0 16px;
-   }
-
-   .hero-content h1 {
-      font-size: 32px;
+      padding: 0 20px;
    }
    
+   .hero-content h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 150%;
+      letter-spacing: 0%;
+   }
+   .small-text{
+      font-size:14px;
+      font-weight:600;
+      line-height: 140%;
+      letter-spacing: 0.2px;
+   }
+   .hero-desc{
+      font-size:12px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.2px;
+   }
    .center {
       font-size: 26px;
    }
@@ -1081,19 +896,19 @@ a {
    }
 
    .hero-buttons {
-      width: auto ;
-      flex-direction: row ;
-      gap: 12px ;
+      width: auto;
+      flex-direction: row;
+      gap: 12px;
    }
 
    .hero-buttons .btn-orange {
-      max-width: 119px ;
-      width: auto ;
+      max-width: 119px;
+      width: auto;
    }
 
    .hero-buttons .btn-outline {
-      max-width: 141px ;
-      width: auto ;
+      max-width: 141px;
+      width: auto;
    }
 
    .stats-grid {
