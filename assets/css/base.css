@@ -768,8 +768,7 @@ html {
    .about-content .row, 
    .about-content .row.reverse {
       flex-direction: column;
-      gap: 30px;
-      text-align: left;
+      gap: 40px;
    }
 
    .about-content .col1, 
@@ -856,18 +855,10 @@ html {
       gap: 60px;
    }
 
-   .about .about-content .row, 
-   .about .about-content .row.reverse {
-      display: flex;
-      flex-direction: column;
-      gap: 24px; 
-      text-align: left;
-   }
-
    .about .background-img {
       border-radius: 50px;
-      height: 200px;
-      width: 321px;
+      height: 180px;
+      width: 353px;
       padding: 16px;
       border: 1.5px solid #E0E0E0;
    }
@@ -886,8 +877,8 @@ html {
       padding: 0 10px;
    }
 
-   .about .col1 h2, 
-   .about .col2 h2 {
+   .about .col1 .col-slogan, 
+   .about .col2 .col-slogan {
       font-size: 30px;
    }
 
