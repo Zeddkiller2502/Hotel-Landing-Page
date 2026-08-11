@@ -57,7 +57,7 @@ a {
 
 
 .orange {
-   color: #f4801e;
+   color: #FF8D41;
 }
 /* --- HIỆU ỨNG JS --- */
 
@@ -132,7 +132,7 @@ html {
 }
 
 .btn-orange {
-   background-color: #f4801e;
+   background-color: #FF8D41;
 }
 
 .btn-orange:hover {
@@ -142,13 +142,13 @@ html {
 
 .btn-outline {
    background-color: transparent;
-   color: #f4801e;
-   border: 1.5px solid #f4801e;
+   color: #FF8D41;
+   border: 1.5px solid #FF8D41;
    
 }
 
 .btn-outline:hover {
-   background-color: #f4801e;
+   background-color: #FF8D41;
    color: #FFFFFF;
 }
 
@@ -220,7 +220,7 @@ html {
 }
 
 .nav a:hover {
-   color: #f4801e;
+   color: #FF8D41;
 }
 
 .logout {
@@ -232,7 +232,7 @@ html {
 }
 
 .logout:hover {
-   color: #f4801e;
+   color: #FF8D41;
 }
 
 .hero {
@@ -356,7 +356,7 @@ html {
 
 /* --- 3. STATS BAR SECTION --- */
 .stats {
-  background-color: #f4801e;
+  background-color: #FF8D41;
   padding: 20px 0;
 }
 
@@ -487,8 +487,8 @@ html {
 
 /* 3. Hover — card thường */
 .service-card:not(.active):hover {
-   background-color: #f4801e;
-   border-color: #f4801e;
+   background-color: #FF8D41;
+   border-color: #FF8D41;
 }
 
 .service-card:not(.active):hover p {
@@ -604,7 +604,7 @@ html {
    margin-top: 16px;
 }
 .footer-mini a:hover {
-   color: #f4801e;
+   color: #FF8D41;
 }
 .footer-logo{
    font-weight: 700;
@@ -723,7 +723,7 @@ html {
 
    .logout-mobile {
       display: inline-block;
-      color: #f4801e;
+      color: #FF8D41;
       font-weight: 600;
       font-size: 18px;
       margin-top: 10px;
@@ -755,7 +755,7 @@ html {
       align-items: center;
       width: 100%;
       gap: 10px;
-   }
+   }th
 
    .stats-number {
       font-size: 30px;
@@ -935,5 +935,28 @@ html {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+   }
+   .stats-number{
+      font-weight:600;
+      font-size:28px;
+      line-height: 140%;
+      letter-spacing: 0.2px;
+   }
+   .stats-word{
+      font-weight:500;
+      font-size:12px;
+      line-height: 100%;
+      letter-spacing: 0.2px;
+   }
+   .btn{
+      font-size:12px;
+      padding: 12px 20px;
+   }
+   .btn-outline{
+      border: 1.5px solid #FF8D41;
+      color: #FF8D41;
+   }
+   .stats{
+      background-color: #FF8D41;
    }
 }
