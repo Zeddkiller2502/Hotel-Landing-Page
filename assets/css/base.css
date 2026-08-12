@@ -341,7 +341,9 @@ html {
 }
 
 .background-img {  
-   height: 360px;
+   /* height: 360px; */
+   width: 100%;
+   aspect-ratio: 3 / 2; 
    border: 1.5px solid #E0E0E0;
    border-radius: 50px;
    padding: 16px 14.5px;
@@ -649,6 +651,22 @@ html {
    .container {
       max-width: 1140px;
    }
+   .background-img {
+      width: 100%;
+      /* giảm chút cho vừa mắt trên tablet, tùy bạn */
+   }
+
+   .background-img img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+   }
+
+   .row,
+   .row.reverse {
+      gap: 32px; /* co lại gap cho khỏi chật */
+   }
 }
 
 
@@ -769,19 +787,19 @@ html {
    .about-content .row.reverse {
       flex-direction: column;
       gap: 40px;
+      align-items: revert;
    }
 
    .about-content .col1, 
    .about-content .col2 {
       max-width: 100%;
       text-align: left;
-      padding: 100px; 
+      padding: 0px; 
    }
 
    .about-content .background-img {
       width: 100%;
       max-width: 100%;
-      height: 280px;
       border-radius: 30px;
       margin: 0 auto;
    }
@@ -807,15 +825,6 @@ html {
       flex-direction: column;
       align-items: center;
       margin-top: 40px;
-   }
-
-   .services-grid .service-card {
-      max-width: 450px;
-      height: auto;
-      padding: 40px 24px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
    }
 
    .services-grid .services-background {
@@ -858,7 +867,6 @@ html {
    .about .background-img {
       border-radius: 50px;
       height: 180px;
-      width: 353px;
       padding: 16px;
       border: 1.5px solid #E0E0E0;
    }
@@ -958,5 +966,11 @@ html {
    }
    .stats{
       background-color: #FF8D41;
+   }
+   .service-card{
+      padding: 64px 48px;
+   }
+   .review-card{
+      padding: 16px 24px;
    }
 }
