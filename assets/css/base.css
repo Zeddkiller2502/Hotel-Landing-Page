@@ -628,7 +628,7 @@ html {
    width: 30px;
    height: 21px;
    cursor: pointer;
-   z-index: 1005; /* Đặt cao hơn menu đen (900) để nút X luôn nổi lên trên và bấm được */
+   z-index: 1005; 
    position: relative;
 }
 
@@ -878,7 +878,6 @@ html {
       object-fit: cover;
    }
 
-   /* Căn lề trái phải an toàn cho phần chữ About */
    .about .col1, 
    .about .col2 {
       width: 100%;
