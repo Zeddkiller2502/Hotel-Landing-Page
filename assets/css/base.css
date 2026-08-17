@@ -561,11 +561,16 @@ html {
 }
 
 .footer-grid {
-   display: flex;            
+   display: flex;
    justify-content: space-between;
    gap: 117px;
 }
-
+.footer-bottom {
+   display: flex;
+   justify-content: space-between;
+   gap: 48px;
+   flex: 1;
+}
 .footer-stay p {
    color: #9E9E9E;
    font-size: 14px;
@@ -763,7 +768,7 @@ html {
 
    .stats {
       height: auto;
-      padding: 20px 10px;
+      padding: 20px 39.5px;
    }
 
    .stats-grid {
@@ -808,7 +813,7 @@ html {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 40px;
+      margin-top: 64px;
       width: 100%;
    }
 
@@ -824,7 +829,7 @@ html {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 40px;
+      margin-top: 64px;
    }
 
    .services-grid .services-background {
@@ -834,7 +839,8 @@ html {
 
    .reviews-grid {
       flex-direction: column;
-      gap: 30px;
+      gap: 48px;
+      margin-top: 64px;
    }
 
    .reviews-grid .review-card {
@@ -842,15 +848,17 @@ html {
    }
 
    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      align-items: flex-start;
-   }
+   display: flex;
+   flex-direction: column;
+   gap: 48px;
+}
 
-   .footer-grid .footer-stay {
-      grid-column: span 2;
-   }
+.footer-bottom {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 48px;
+   width: 100%;
+}
 }
 
 /* 3. md (landscape phones, less than 768px) */
@@ -891,11 +899,13 @@ html {
 
    .about .col1 p, 
    .about .col2 p {
-      margin-top: 15px;
+      margin-top: 24px;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.2px;
+      line-height: 100%;
    }
+   
 }
 
 
@@ -924,7 +934,10 @@ html {
       letter-spacing: 0.2px;
    }
    .center {
-      font-size: 26px;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 110.00000000000001%;
+      letter-spacing: 0%;
    }
 
    .hero {
@@ -937,11 +950,16 @@ html {
       letter-spacing: 0.2px;
       padding: 12px 20px;
    }
-
+   .hero-content h1{
+      margin-top:8px;
+   }
+   .section-label1{
+      margin-bottom: 60px;
+   }
    .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 34px;
    }
    .stats-number{
       font-weight:600;
@@ -967,9 +985,18 @@ html {
       background-color: #FF8D41;
    }
    .service-card{
-      padding: 64px 48px;
+      padding: 64px 32px;
    }
    .review-card{
+      padding: 0px 27.5px;
+   }
+   .review-card-top{
       padding: 16px 24px;
+   }
+   .review-card-bottom{
+      padding: 0px 52.5px;
+   }
+   .footer-stay{
+      padding: 0 73px 0 0;
    }
 }
